@@ -1,0 +1,813 @@
+2017-08-14 19:43:48:386 - info: Welcome to Appium v1.4.16 (REV ae6877eff263066b26328d457bd285c0cc62430d)
+2017-08-14 19:43:48:387 - info: Appium REST http interface listener started on 0.0.0.0:4723
+2017-08-14 19:43:48:389 - info: [debug] Non-default server args: {"log":"C:\\LastHope\\TsetAutothon\\.\\AppiumServerlog.txt"}
+2017-08-14 19:43:48:389 - info: Console LogLevel: debug
+2017-08-14 19:43:48:390 - info: File LogLevel: debug
+2017-08-14 19:43:48:472 - info: --> GET /wd/hub/status {}
+2017-08-14 19:43:48:475 - info: [debug] Responding to client with success: {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
+2017-08-14 19:43:48:488 - info: <-- GET /wd/hub/status 200 17.865 ms - 105 {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
+2017-08-14 19:43:48:958 - info: --> POST /wd/hub/session {"desiredCapabilities":{"appPackage":"com.bt.bms","appActivity":"com.movie.bms.splash.views.activities.SplashScreenActivity","browserName":"Android","platformName":"Android","deviceName":"e754d6d3","version":"6.0.1"}}
+2017-08-14 19:43:48:959 - info: Client User-Agent string: Apache-HttpClient/4.5.2 (Java/1.8.0_92)
+2017-08-14 19:43:48:960 - info: [debug] The following desired capabilities were provided, but not recognized by appium. They will be passed on to any other services running on this server. : version
+2017-08-14 19:43:48:961 - info: [debug] Didn't get app but did get Android package, will attempt to launch it on the device
+2017-08-14 19:43:48:962 - info: [debug] Creating new appium session ef26e6a5-339d-45c2-b96c-65d75cfe8dca
+2017-08-14 19:43:48:962 - info: Starting android appium
+2017-08-14 19:43:48:963 - info: [debug] Getting Java version
+2017-08-14 19:43:49:216 - info: Java version is: 1.8.0_92
+2017-08-14 19:43:49:217 - info: [debug] Checking whether adb is present
+2017-08-14 19:43:49:222 - info: [debug] Using adb from C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe
+2017-08-14 19:43:49:223 - warn: No app capability, can't parse package/activity
+2017-08-14 19:43:49:223 - info: [debug] Using fast reset? true
+2017-08-14 19:43:49:223 - info: [debug] Preparing device for session
+2017-08-14 19:43:49:223 - info: [debug] Not checking whether app is present since we are assuming it's already on the device
+2017-08-14 19:43:49:224 - info: Retrieving device
+2017-08-14 19:43:49:224 - info: [debug] Trying to find a connected android device
+2017-08-14 19:43:49:225 - info: [debug] Getting connected devices...
+2017-08-14 19:43:49:226 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" devices
+2017-08-14 19:43:49:414 - info: [debug] 1 device(s) connected
+2017-08-14 19:43:49:415 - info: Found device e754d6d3
+2017-08-14 19:43:49:415 - info: [debug] Setting device id to e754d6d3
+2017-08-14 19:43:49:415 - info: [debug] Waiting for device to be ready and to respond to shell commands (timeout = 5)
+2017-08-14 19:43:49:417 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 wait-for-device
+2017-08-14 19:43:49:639 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "echo 'ready'"
+2017-08-14 19:43:49:905 - info: [debug] Starting logcat capture
+2017-08-14 19:43:50:049 - info: [debug] Getting device API level
+2017-08-14 19:43:50:050 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "getprop ro.build.version.sdk"
+2017-08-14 19:43:50:367 - info: [debug] Device is at API Level 23
+2017-08-14 19:43:50:368 - info: Device API level is: 23
+2017-08-14 19:43:50:369 - info: [debug] Extracting strings for language: default
+2017-08-14 19:43:50:370 - info: [debug] Apk doesn't exist locally
+2017-08-14 19:43:50:371 - info: [debug] Could not get strings, but it looks like we had an old strings file anyway, so ignoring
+2017-08-14 19:43:50:372 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "rm -rf /data/local/tmp/strings.json"
+2017-08-14 19:43:50:727 - info: [debug] Not uninstalling app since server not started with --full-reset
+2017-08-14 19:43:50:727 - info: [debug] Skipping install since we launched with a package instead of an app path
+2017-08-14 19:43:50:727 - info: [debug] Forwarding system:4724 to device:4724
+2017-08-14 19:43:50:727 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 forward tcp:4724 tcp:4724
+2017-08-14 19:43:50:955 - info: [debug] Pushing appium bootstrap to device...
+2017-08-14 19:43:50:957 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 push "C:\\Program Files (x86)\\Appium\\node_modules\\appium\\build\\android_bootstrap\\AppiumBootstrap.jar" /data/local/tmp/
+2017-08-14 19:43:51:185 - info: [debug] Pushing settings apk to device...
+2017-08-14 19:43:51:186 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 install "C:\Program Files (x86)\Appium\node_modules\appium\build\settings_apk\settings_apk-debug.apk"
+2017-08-14 19:43:54:803 - info: [debug] Pushing unlock helper app to device...
+2017-08-14 19:43:54:804 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 install "C:\Program Files (x86)\Appium\node_modules\appium\build\unlock_apk\unlock_apk-debug.apk"
+2017-08-14 19:43:57:592 - info: Starting App
+2017-08-14 19:43:57:593 - info: [debug] Attempting to kill all 'uiautomator' processes
+2017-08-14 19:43:57:593 - info: [debug] Getting all processes with 'uiautomator'
+2017-08-14 19:43:57:593 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "ps 'uiautomator'"
+2017-08-14 19:43:58:010 - info: [debug] No matching processes found
+2017-08-14 19:43:58:010 - info: [debug] Running bootstrap
+2017-08-14 19:43:58:011 - info: [debug] spawning: C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe -s e754d6d3 shell uiautomator runtest AppiumBootstrap.jar -c io.appium.android.bootstrap.Bootstrap -e pkg com.bt.bms -e disableAndroidWatchers false
+2017-08-14 19:43:59:599 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: numtests=1
+2017-08-14 19:43:59:602 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: stream=
+2017-08-14 19:43:59:602 - info: [debug] [UIAUTOMATOR STDOUT] io.appium.android.bootstrap.Bootstrap:
+2017-08-14 19:43:59:602 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+2017-08-14 19:43:59:602 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: test=testRunServer
+2017-08-14 19:43:59:602 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: class=io.appium.android.bootstrap.Bootstrap
+2017-08-14 19:43:59:603 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: current=1
+2017-08-14 19:43:59:603 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS_CODE: 1
+2017-08-14 19:43:59:647 - info: [debug] [BOOTSTRAP] [debug] Socket opened on port 4724
+2017-08-14 19:43:59:648 - info: [debug] [BOOTSTRAP] [debug] Appium Socket Server Ready
+2017-08-14 19:43:59:649 - info: [debug] [BOOTSTRAP] [debug] Loading json...
+2017-08-14 19:43:59:653 - info: [debug] [BOOTSTRAP] [debug] Registered crash watchers.
+2017-08-14 19:43:59:659 - info: [debug] Waking up device if it's not alive
+2017-08-14 19:43:59:660 - info: [debug] Pushing command to appium work queue: ["wake",{}]
+2017-08-14 19:43:59:666 - info: [debug] [BOOTSTRAP] [debug] Client connected
+2017-08-14 19:43:59:669 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"wake","params":{}}
+2017-08-14 19:43:59:670 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:43:59:670 - info: [debug] [BOOTSTRAP] [debug] Got command action: wake
+2017-08-14 19:43:59:674 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:43:59:676 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "dumpsys window"
+2017-08-14 19:44:00:045 - info: [debug] Screen already unlocked, continuing.
+2017-08-14 19:44:00:046 - info: [debug] Pushing command to appium work queue: ["getDataDir",{}]
+2017-08-14 19:44:00:050 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDataDir","params":{}}
+2017-08-14 19:44:00:050 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:00:050 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDataDir
+2017-08-14 19:44:00:051 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":"\/data\/local\/tmp"}
+2017-08-14 19:44:00:051 - info: [debug] dataDir set to: /data/local/tmp
+2017-08-14 19:44:00:051 - info: [debug] Pushing command to appium work queue: ["compressedLayoutHierarchy",{"compressLayout":false}]
+2017-08-14 19:44:00:055 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"compressedLayoutHierarchy","params":{"compressLayout":false}}
+2017-08-14 19:44:00:055 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:00:055 - info: [debug] [BOOTSTRAP] [debug] Got command action: compressedLayoutHierarchy
+2017-08-14 19:44:00:060 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":false}
+2017-08-14 19:44:00:062 - info: [debug] Getting device API level
+2017-08-14 19:44:00:062 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "getprop ro.build.version.sdk"
+2017-08-14 19:44:00:346 - info: [debug] Device is at API Level 23
+2017-08-14 19:44:00:347 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "am start -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n com.bt.bms/com.movie.bms.splash.views.activities.SplashScreenActivity"
+2017-08-14 19:44:02:314 - info: [debug] Waiting for pkg "com.bt.bms" and activity "com.movie.bms.splash.views.activities.SplashScreenActivity" to be focused
+2017-08-14 19:44:02:314 - info: [debug] Getting focused package and activity
+2017-08-14 19:44:02:315 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "dumpsys window windows"
+2017-08-14 19:44:02:651 - info: [debug] executing cmd: "C:\Program Files (x86)\Android\android-sdk\platform-tools\adb.exe" -s e754d6d3 shell "getprop ro.build.version.release"
+2017-08-14 19:44:03:049 - info: [debug] Device is at release version 6.0.1
+2017-08-14 19:44:03:049 - info: [debug] Device launched! Ready for commands
+2017-08-14 19:44:03:050 - info: [debug] Setting command timeout to the default of 60 secs
+2017-08-14 19:44:03:050 - info: [debug] Appium session started with sessionId ef26e6a5-339d-45c2-b96c-65d75cfe8dca
+2017-08-14 19:44:03:055 - info: <-- POST /wd/hub/session 303 14096.612 ms - 74 
+2017-08-14 19:44:03:070 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca {}
+2017-08-14 19:44:03:071 - info: [debug] Responding to client with success: {"status":0,"value":{"platform":"LINUX","browserName":"Android","platformVersion":"6.0.1","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"appPackage":"com.bt.bms","appActivity":"com.movie.bms.splash.views.activities.SplashScreenActivity","browserName":"Android","platformName":"Android","deviceName":"e754d6d3","version":"6.0.1"},"appPackage":"com.bt.bms","appActivity":"com.movie.bms.splash.views.activities.SplashScreenActivity","platformName":"Android","deviceName":"e754d6d3","version":"6.0.1"},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:073 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca 200 2.670 ms - 689 {"status":0,"value":{"platform":"LINUX","browserName":"Android","platformVersion":"6.0.1","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"appPackage":"com.bt.bms","appActivity":"com.movie.bms.splash.views.activities.SplashScreenActivity","browserName":"Android","platformName":"Android","deviceName":"e754d6d3","version":"6.0.1"},"appPackage":"com.bt.bms","appActivity":"com.movie.bms.splash.views.activities.SplashScreenActivity","platformName":"Android","deviceName":"e754d6d3","version":"6.0.1"},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:095 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":20000}
+2017-08-14 19:44:03:096 - info: [debug] Set Android implicit wait to 20000ms
+2017-08-14 19:44:03:097 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:097 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 2.585 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:281 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:03:281 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:03:282 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:283 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 2.396 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:286 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:03:287 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:288 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 1.116 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:03:291 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Now Showing"}
+2017-08-14 19:44:03:291 - warn: [DEPRECATED] The name locator strategy has been deprecated and will be removed.  Please use the accessibility id locator strategy instead.
+2017-08-14 19:44:03:292 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:03:292 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Now Showing","context":"","multiple":true}]
+2017-08-14 19:44:03:302 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Now Showing","context":"","multiple":true}}
+2017-08-14 19:44:03:303 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:03:303 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:03:304 - info: [debug] [BOOTSTRAP] [debug] Finding Now Showing using NAME with the contextId:  multiple: true
+2017-08-14 19:44:03:304 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Now Showing]
+2017-08-14 19:44:03:304 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Now Showing]
+2017-08-14 19:44:03:304 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:03:305 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Now Showing, INSTANCE=0]
+2017-08-14 19:44:08:632 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Now Showing]
+2017-08-14 19:44:08:632 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Now Showing]
+2017-08-14 19:44:08:633 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:08:633 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Now Showing, INSTANCE=0]
+2017-08-14 19:44:11:699 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (1)
+2017-08-14 19:44:11:699 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Now Showing, INSTANCE=1]
+2017-08-14 19:44:12:899 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[{"ELEMENT":"1"}]}
+2017-08-14 19:44:12:900 - info: [debug] Responding to client with success: {"status":0,"value":[{"ELEMENT":"1"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:12:902 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 9610.833 ms - 89 {"status":0,"value":[{"ELEMENT":"1"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:12:910 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:12:910 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:12:910 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:12:911 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.142 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:12:916 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/1/displayed {}
+2017-08-14 19:44:12:917 - info: [debug] Pushing command to appium work queue: ["element:getAttribute",{"elementId":"1","attribute":"displayed"}]
+2017-08-14 19:44:12:921 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"element:getAttribute","params":{"elementId":"1","attribute":"displayed"}}
+2017-08-14 19:44:12:921 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:12:921 - info: [debug] [BOOTSTRAP] [debug] Got command action: getAttribute
+2017-08-14 19:44:13:003 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":"true"}
+2017-08-14 19:44:13:005 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:005 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/1/displayed 200 89.539 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:010 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:13:011 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:13:011 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:011 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.067 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:017 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:13:017 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:13:017 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:018 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.324 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:022 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:13:023 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:029 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 6.753 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:13:034 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:13:035 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:13:035 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:13:040 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:13:040 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:13:040 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:13:040 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:13:041 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:13:041 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:13:041 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:13:041 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:13:622 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:13:623 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:13:623 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:13:625 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:13:731 - info: [debug] [BOOTSTRAP] [debug] Failed to locate element. Clearing Accessibility cache and retrying.
+2017-08-14 19:44:13:735 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:13:737 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:13:737 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:13:738 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:13:738 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:14:010 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:14:010 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:14:010 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:14:010 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:15:258 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[]}
+2017-08-14 19:44:15:259 - info: [debug] Condition unmet after 2224ms. Timing out.
+2017-08-14 19:44:15:260 - info: [debug] Responding to client with success: {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:263 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 2229.094 ms - 74 {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:280 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:15:281 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:15:281 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:282 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 2.044 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:287 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size {}
+2017-08-14 19:44:15:288 - info: [debug] Pushing command to appium work queue: ["getDeviceSize"]
+2017-08-14 19:44:15:293 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDeviceSize","params":{}}
+2017-08-14 19:44:15:293 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:15:293 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDeviceSize
+2017-08-14 19:44:15:326 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":{"height":1920,"width":1080}}
+2017-08-14 19:44:15:326 - info: [debug] Responding to client with success: {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:327 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size 200 40.233 ms - 100 {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:333 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform {"actions":[{"action":"press","options":{"x":540,"y":1152}},{"action":"wait","options":{"ms":500}},{"action":"moveTo","options":{"x":540,"y":384}},{"action":"release","options":{}}]}
+2017-08-14 19:44:15:334 - info: [debug] Pushing command to appium work queue: ["swipe",{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}]
+2017-08-14 19:44:15:336 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"swipe","params":{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}}
+2017-08-14 19:44:15:337 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:15:337 - info: [debug] [BOOTSTRAP] [debug] Got command action: swipe
+2017-08-14 19:44:15:340 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:15:343 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:15:346 - info: [debug] [BOOTSTRAP] [debug] Swiping from [x=540.0, y=1152.0] to [x=540.0, y=384.0] with steps: 14
+2017-08-14 19:44:15:763 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:15:764 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:765 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform 200 432.480 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:785 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:15:785 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:15:786 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:788 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 3.054 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:793 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:15:793 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:15:793 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:794 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.263 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:802 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:15:803 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:805 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 3.042 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:15:808 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:15:809 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:15:809 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:15:819 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:15:819 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:15:820 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:15:820 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:15:820 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:15:821 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:15:821 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:15:821 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:17:124 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:17:125 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:17:125 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:17:125 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:17:228 - info: [debug] [BOOTSTRAP] [debug] Failed to locate element. Clearing Accessibility cache and retrying.
+2017-08-14 19:44:17:229 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:17:230 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:17:231 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:17:231 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:17:231 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:17:401 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:17:401 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:17:401 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:17:401 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:17:446 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[]}
+2017-08-14 19:44:17:446 - info: [debug] Condition unmet after 1637ms. Timing out.
+2017-08-14 19:44:17:447 - info: [debug] Responding to client with success: {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:450 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 1640.843 ms - 74 {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:457 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:17:457 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:17:457 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:461 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 4.326 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:462 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size {}
+2017-08-14 19:44:17:462 - info: [debug] Pushing command to appium work queue: ["getDeviceSize"]
+2017-08-14 19:44:17:466 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDeviceSize","params":{}}
+2017-08-14 19:44:17:469 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:17:469 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDeviceSize
+2017-08-14 19:44:17:473 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":{"height":1920,"width":1080}}
+2017-08-14 19:44:17:474 - info: [debug] Responding to client with success: {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:475 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size 200 12.937 ms - 100 {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:479 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform {"actions":[{"action":"press","options":{"x":540,"y":1152}},{"action":"wait","options":{"ms":500}},{"action":"moveTo","options":{"x":540,"y":384}},{"action":"release","options":{}}]}
+2017-08-14 19:44:17:479 - info: [debug] Pushing command to appium work queue: ["swipe",{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}]
+2017-08-14 19:44:17:482 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"swipe","params":{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}}
+2017-08-14 19:44:17:484 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:17:484 - info: [debug] [BOOTSTRAP] [debug] Got command action: swipe
+2017-08-14 19:44:17:490 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:17:499 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:17:502 - info: [debug] [BOOTSTRAP] [debug] Swiping from [x=540.0, y=1152.0] to [x=540.0, y=384.0] with steps: 14
+2017-08-14 19:44:17:954 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:17:955 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:956 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform 200 477.943 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:964 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:17:966 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:17:967 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:969 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 5.391 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:980 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:17:981 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:17:981 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:982 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.909 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:987 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:17:987 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:989 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 1.514 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:17:992 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:17:993 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:17:993 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:18:000 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:18:001 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:18:001 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:18:002 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:18:002 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:18:002 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:18:002 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:18:003 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:20:171 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:20:172 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:20:174 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:20:178 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:20:233 - info: [debug] [BOOTSTRAP] [debug] Failed to locate element. Clearing Accessibility cache and retrying.
+2017-08-14 19:44:20:233 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:20:234 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:20:234 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:20:234 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:20:235 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:20:332 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:20:333 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:20:333 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:20:333 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:20:368 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[]}
+2017-08-14 19:44:20:369 - info: [debug] Condition unmet after 2376ms. Timing out.
+2017-08-14 19:44:20:369 - info: [debug] Responding to client with success: {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:370 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 2377.545 ms - 74 {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:374 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:20:375 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:20:375 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:375 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.076 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:379 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size {}
+2017-08-14 19:44:20:379 - info: [debug] Pushing command to appium work queue: ["getDeviceSize"]
+2017-08-14 19:44:20:383 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDeviceSize","params":{}}
+2017-08-14 19:44:20:386 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:20:387 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDeviceSize
+2017-08-14 19:44:20:389 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":{"height":1920,"width":1080}}
+2017-08-14 19:44:20:389 - info: [debug] Responding to client with success: {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:390 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size 200 11.162 ms - 100 {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:395 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform {"actions":[{"action":"press","options":{"x":540,"y":1152}},{"action":"wait","options":{"ms":500}},{"action":"moveTo","options":{"x":540,"y":384}},{"action":"release","options":{}}]}
+2017-08-14 19:44:20:396 - info: [debug] Pushing command to appium work queue: ["swipe",{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}]
+2017-08-14 19:44:20:398 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"swipe","params":{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}}
+2017-08-14 19:44:20:399 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:20:400 - info: [debug] [BOOTSTRAP] [debug] Got command action: swipe
+2017-08-14 19:44:20:404 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:20:407 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:20:408 - info: [debug] [BOOTSTRAP] [debug] Swiping from [x=540.0, y=1152.0] to [x=540.0, y=384.0] with steps: 14
+2017-08-14 19:44:20:950 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:20:955 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:955 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform 200 559.830 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:962 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:20:963 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:20:963 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:963 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 0.934 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:968 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:20:969 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:20:969 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:970 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.291 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:974 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:20:974 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:976 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 1.390 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:20:979 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:20:980 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:20:980 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:20:992 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:20:992 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:20:992 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:20:992 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:20:992 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:20:992 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:20:992 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:20:993 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:22:351 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:22:352 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:22:352 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:22:352 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:22:453 - info: [debug] [BOOTSTRAP] [debug] Failed to locate element. Clearing Accessibility cache and retrying.
+2017-08-14 19:44:22:453 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:22:453 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:22:454 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:22:454 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:22:454 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:22:572 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:22:572 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:22:572 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:22:572 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:22:730 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[]}
+2017-08-14 19:44:22:730 - info: [debug] Condition unmet after 1750ms. Timing out.
+2017-08-14 19:44:22:730 - info: [debug] Responding to client with success: {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:22:731 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 1752.379 ms - 74 {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:22:741 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:22:741 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:22:742 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:22:743 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.783 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:22:747 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size {}
+2017-08-14 19:44:22:748 - info: [debug] Pushing command to appium work queue: ["getDeviceSize"]
+2017-08-14 19:44:22:753 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDeviceSize","params":{}}
+2017-08-14 19:44:22:754 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:22:755 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDeviceSize
+2017-08-14 19:44:22:759 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":{"height":1920,"width":1080}}
+2017-08-14 19:44:22:761 - info: [debug] Responding to client with success: {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:22:761 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size 200 14.476 ms - 100 {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:22:765 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform {"actions":[{"action":"press","options":{"x":540,"y":1152}},{"action":"wait","options":{"ms":500}},{"action":"moveTo","options":{"x":540,"y":384}},{"action":"release","options":{}}]}
+2017-08-14 19:44:22:765 - info: [debug] Pushing command to appium work queue: ["swipe",{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}]
+2017-08-14 19:44:22:768 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"swipe","params":{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}}
+2017-08-14 19:44:22:770 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:22:771 - info: [debug] [BOOTSTRAP] [debug] Got command action: swipe
+2017-08-14 19:44:22:774 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:22:792 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:22:795 - info: [debug] [BOOTSTRAP] [debug] Swiping from [x=540.0, y=1152.0] to [x=540.0, y=384.0] with steps: 14
+2017-08-14 19:44:23:161 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:23:163 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:164 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform 200 399.184 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:174 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:23:174 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:23:174 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:175 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.273 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:178 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:23:178 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:23:178 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:179 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.051 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:190 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:23:190 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:190 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 0.797 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:23:195 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:23:195 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:23:195 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:23:203 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:23:204 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:23:204 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:23:204 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:23:204 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:23:204 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:23:205 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:23:205 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:25:137 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:25:139 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:25:139 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:25:140 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:25:203 - info: [debug] [BOOTSTRAP] [debug] Failed to locate element. Clearing Accessibility cache and retrying.
+2017-08-14 19:44:25:204 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:25:204 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:25:204 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:25:205 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:25:205 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:25:395 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:25:395 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:25:395 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:25:395 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:25:425 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[]}
+2017-08-14 19:44:25:426 - info: [debug] Condition unmet after 2231ms. Timing out.
+2017-08-14 19:44:25:426 - info: [debug] Responding to client with success: {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:428 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 2233.014 ms - 74 {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:438 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:25:439 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:25:439 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:441 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 2.562 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:446 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size {}
+2017-08-14 19:44:25:447 - info: [debug] Pushing command to appium work queue: ["getDeviceSize"]
+2017-08-14 19:44:25:450 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDeviceSize","params":{}}
+2017-08-14 19:44:25:450 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:25:450 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDeviceSize
+2017-08-14 19:44:25:452 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":{"height":1920,"width":1080}}
+2017-08-14 19:44:25:453 - info: [debug] Responding to client with success: {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:453 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size 200 7.269 ms - 100 {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:457 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform {"actions":[{"action":"press","options":{"x":540,"y":1152}},{"action":"wait","options":{"ms":500}},{"action":"moveTo","options":{"x":540,"y":384}},{"action":"release","options":{}}]}
+2017-08-14 19:44:25:457 - info: [debug] Pushing command to appium work queue: ["swipe",{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}]
+2017-08-14 19:44:25:466 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"swipe","params":{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}}
+2017-08-14 19:44:25:467 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:25:468 - info: [debug] [BOOTSTRAP] [debug] Got command action: swipe
+2017-08-14 19:44:25:469 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:25:471 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:25:471 - info: [debug] [BOOTSTRAP] [debug] Swiping from [x=540.0, y=1152.0] to [x=540.0, y=384.0] with steps: 14
+2017-08-14 19:44:25:868 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:25:870 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:871 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform 200 414.075 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:875 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:25:875 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:25:875 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:876 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 0.841 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:881 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:25:881 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:25:881 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:882 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 0.858 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:885 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:25:885 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:885 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 0.818 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:25:890 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:25:891 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:25:891 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:25:900 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:25:900 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:25:901 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:25:901 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:25:901 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:25:901 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:25:902 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:25:902 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:27:384 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:27:384 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:27:384 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:27:385 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:27:440 - info: [debug] [BOOTSTRAP] [debug] Failed to locate element. Clearing Accessibility cache and retrying.
+2017-08-14 19:44:27:442 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:27:443 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:27:443 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:27:443 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:27:444 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:27:596 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:27:597 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:27:597 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:27:597 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:27:616 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[]}
+2017-08-14 19:44:27:616 - info: [debug] Condition unmet after 1725ms. Timing out.
+2017-08-14 19:44:27:616 - info: [debug] Responding to client with success: {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:27:617 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 1726.724 ms - 74 {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:27:621 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:27:621 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:27:621 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:27:622 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.427 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:27:626 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size {}
+2017-08-14 19:44:27:627 - info: [debug] Pushing command to appium work queue: ["getDeviceSize"]
+2017-08-14 19:44:27:630 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDeviceSize","params":{}}
+2017-08-14 19:44:27:631 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:27:631 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDeviceSize
+2017-08-14 19:44:27:635 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":{"height":1920,"width":1080}}
+2017-08-14 19:44:27:637 - info: [debug] Responding to client with success: {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:27:638 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size 200 11.623 ms - 100 {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:27:644 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform {"actions":[{"action":"press","options":{"x":540,"y":1152}},{"action":"wait","options":{"ms":500}},{"action":"moveTo","options":{"x":540,"y":384}},{"action":"release","options":{}}]}
+2017-08-14 19:44:27:645 - info: [debug] Pushing command to appium work queue: ["swipe",{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}]
+2017-08-14 19:44:27:648 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"swipe","params":{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}}
+2017-08-14 19:44:27:650 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:27:650 - info: [debug] [BOOTSTRAP] [debug] Got command action: swipe
+2017-08-14 19:44:27:655 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:27:660 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:27:661 - info: [debug] [BOOTSTRAP] [debug] Swiping from [x=540.0, y=1152.0] to [x=540.0, y=384.0] with steps: 14
+2017-08-14 19:44:28:154 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:28:154 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:155 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform 200 510.056 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:162 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:28:162 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:28:162 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:162 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 0.942 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:168 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:28:169 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:28:169 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:170 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 2.525 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:173 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:28:173 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:174 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 0.827 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:28:177 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:28:177 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:28:178 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:28:185 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:28:185 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:28:185 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:28:185 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:28:188 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:28:189 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:28:189 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:28:189 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:29:556 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:29:557 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:29:558 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:29:558 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:30:485 - info: [debug] [BOOTSTRAP] [debug] Failed to locate element. Clearing Accessibility cache and retrying.
+2017-08-14 19:44:30:486 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:30:487 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:30:487 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:30:487 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:30:488 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:30:675 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:30:679 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:30:679 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:30:679 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:30:947 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[]}
+2017-08-14 19:44:30:949 - info: [debug] Condition unmet after 2770ms. Timing out.
+2017-08-14 19:44:30:949 - info: [debug] Responding to client with success: {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:30:951 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 2774.149 ms - 74 {"status":0,"value":[],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:30:965 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:30:965 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:30:966 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:30:967 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 2.618 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:30:978 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size {}
+2017-08-14 19:44:30:978 - info: [debug] Pushing command to appium work queue: ["getDeviceSize"]
+2017-08-14 19:44:30:987 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDeviceSize","params":{}}
+2017-08-14 19:44:30:987 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:30:987 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDeviceSize
+2017-08-14 19:44:30:989 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":{"height":1920,"width":1080}}
+2017-08-14 19:44:30:990 - info: [debug] Responding to client with success: {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:30:992 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/window/current/size 200 13.710 ms - 100 {"status":0,"value":{"height":1920,"width":1080},"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:30:999 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform {"actions":[{"action":"press","options":{"x":540,"y":1152}},{"action":"wait","options":{"ms":500}},{"action":"moveTo","options":{"x":540,"y":384}},{"action":"release","options":{}}]}
+2017-08-14 19:44:31:000 - info: [debug] Pushing command to appium work queue: ["swipe",{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}]
+2017-08-14 19:44:31:002 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"swipe","params":{"startX":540,"startY":1152,"endX":540,"endY":384,"steps":14}}
+2017-08-14 19:44:31:005 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:31:005 - info: [debug] [BOOTSTRAP] [debug] Got command action: swipe
+2017-08-14 19:44:31:009 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:31:012 - info: [debug] [BOOTSTRAP] [debug] Display bounds: [0,0][1080,1920]
+2017-08-14 19:44:31:013 - info: [debug] [BOOTSTRAP] [debug] Swiping from [x=540.0, y=1152.0] to [x=540.0, y=384.0] with steps: 14
+2017-08-14 19:44:31:422 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:31:422 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:423 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/touch/perform 200 424.187 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:428 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:31:428 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:31:429 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:429 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.005 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:436 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:31:437 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:31:437 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:438 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 3.010 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:442 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:31:443 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:443 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 0.764 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:31:446 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Mom"}
+2017-08-14 19:44:31:446 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:31:446 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Mom","context":"","multiple":true}]
+2017-08-14 19:44:31:453 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Mom","context":"","multiple":true}}
+2017-08-14 19:44:31:454 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:31:454 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:31:454 - info: [debug] [BOOTSTRAP] [debug] Finding Mom using NAME with the contextId:  multiple: true
+2017-08-14 19:44:31:455 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:31:455 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Mom]
+2017-08-14 19:44:31:455 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:31:455 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Mom, INSTANCE=0]
+2017-08-14 19:44:32:685 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Mom]
+2017-08-14 19:44:32:685 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Mom]
+2017-08-14 19:44:32:685 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:32:685 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=0]
+2017-08-14 19:44:32:751 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (1)
+2017-08-14 19:44:32:752 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Mom, INSTANCE=1]
+2017-08-14 19:44:32:807 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[{"ELEMENT":"2"}]}
+2017-08-14 19:44:32:807 - info: [debug] Responding to client with success: {"status":0,"value":[{"ELEMENT":"2"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:808 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 1361.645 ms - 89 {"status":0,"value":[{"ELEMENT":"2"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:812 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:32:812 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:32:813 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:813 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.095 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:818 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/2/displayed {}
+2017-08-14 19:44:32:818 - info: [debug] Pushing command to appium work queue: ["element:getAttribute",{"elementId":"2","attribute":"displayed"}]
+2017-08-14 19:44:32:821 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"element:getAttribute","params":{"elementId":"2","attribute":"displayed"}}
+2017-08-14 19:44:32:822 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:32:822 - info: [debug] [BOOTSTRAP] [debug] Got command action: getAttribute
+2017-08-14 19:44:32:911 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":"true"}
+2017-08-14 19:44:32:912 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:912 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/2/displayed 200 94.573 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:923 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:32:923 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:32:923 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:924 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 0.835 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:929 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:32:929 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:929 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 2.176 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:32:937 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"xpath","value":"//android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK']"}
+2017-08-14 19:44:32:937 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:32:937 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"xpath","selector":"//android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK']","context":"","multiple":true}]
+2017-08-14 19:44:32:942 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"xpath","selector":"//android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK']","context":"","multiple":true}}
+2017-08-14 19:44:32:943 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:32:943 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:32:943 - info: [debug] [BOOTSTRAP] [debug] Finding //android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK'] using XPATH with the contextId:  multiple: true
+2017-08-14 19:44:33:194 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[CLASS=android.widget.TextView, INSTANCE=11]
+2017-08-14 19:44:33:196 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[CLASS=android.widget.TextView, INSTANCE=11]
+2017-08-14 19:44:33:197 - info: [debug] [BOOTSTRAP] [debug] Selector ends with instance.
+2017-08-14 19:44:33:239 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[{"ELEMENT":"3"}]}
+2017-08-14 19:44:33:239 - info: [debug] Responding to client with success: {"status":0,"value":[{"ELEMENT":"3"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:240 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 302.979 ms - 89 {"status":0,"value":[{"ELEMENT":"3"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:243 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:33:244 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:33:244 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:244 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.137 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:247 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/3/displayed {}
+2017-08-14 19:44:33:248 - info: [debug] Pushing command to appium work queue: ["element:getAttribute",{"elementId":"3","attribute":"displayed"}]
+2017-08-14 19:44:33:250 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"element:getAttribute","params":{"elementId":"3","attribute":"displayed"}}
+2017-08-14 19:44:33:252 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:33:253 - info: [debug] [BOOTSTRAP] [debug] Got command action: getAttribute
+2017-08-14 19:44:33:279 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":"true"}
+2017-08-14 19:44:33:280 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:282 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/3/displayed 200 34.312 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:288 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/source {}
+2017-08-14 19:44:33:289 - info: [debug] Pushing command to appium work queue: ["source",{}]
+2017-08-14 19:44:33:297 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"source","params":{}}
+2017-08-14 19:44:33:297 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:33:298 - info: [debug] [BOOTSTRAP] [debug] Got command action: source
+2017-08-14 19:44:33:626 - info: [debug] [UIAUTOMATOR STDOUT] [APPIUM-UIAUTO] [debug] Returning result: {"status":0,"value":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><hierarchy rotation=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,1920]\" resource-id=\"\" instance=\"0\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,1920]\" resource-id=\"\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,72][1080,1920]\" resource-id=\"\" instance=\"1\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,72][1080,1920]\" resource-id=\"com.bt.bms:id\/action_bar_root\" instance=\"1\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,72][
+2017-08-14 19:44:33:626 - info: [debug] [UIAUTOMATOR STDOUT] 1080,1920]\" resource-id=\"android:id\/content\" instance=\"2\"><android.support.v4.widget.DrawerLayout index=\"0\" text=\"\" class=\"android.support.v4.widget.DrawerLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,72][1080,1920]\" resource-id=\"com.bt.bms:id\/main_drawer_layout\" instance=\"0\"><android.view.ViewGroup index=\"0\" text=\"\" class=\"android.view.ViewGroup\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,72][1080,1920]\" resource-id=\"com.bt.bms:id\/mainCoordinatorLayout\" instance=\"0\"><android.widget.FrameLayout index=\"1\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,72][1080,1920]\" resource-id=\"com.bt.bms:id\/movie_fragment_container\" instance=\"3\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,72][1080,1920]\" resource-id=\"\" instance=\"4\"><android.widget.HorizontalScrollView index=\"0\" text=\"\" class=\"android.widget.HorizontalScrollView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"fa
+2017-08-14 19:44:33:628 - info: [debug] [UIAUTOMATOR STDOUT] lse\" selected=\"false\" bounds=\"[0,72][1080,192]\" resource-id=\"com.bt.bms:id\/tab_layout\" instance=\"0\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,87][1080,192]\" resource-id=\"\" instance=\"2\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,87][540,192]\" resource-id=\"\" instance=\"0\"><android.widget.TextView index=\"0\" text=\"Now Showing\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,87][540,192]\" resource-id=\"com.bt.bms:id\/item_events_title_tv\" instance=\"0\"\/><\/android.widget.RelativeLayout><android.widget.RelativeLayout index=\"1\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[540,87][1080,192]\" resource-id=\"\" instance=\"1\"><android.widget.TextView index=\"0\" text=\"Coming Soon\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[540,87][1080,192]\" resource-id=\"com.bt.bms:id\/item_events_title_tv\" instance=\"1\"\/><\/android.widget.RelativeLayout><\/android.widget.LinearLayout><\/android.widget.HorizontalScrollView><android.support.v4.view.ViewPager index=\"1\" text=\"\" class=\"android.support.v4.view.ViewPager\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,192][1080,1920]\" resource-id=\"com.bt.bms:id\/pager\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,192][1080,1920]\" resource-id=\"com.bt.bms:id\/top_container\" instance=\"5\"><android.view.ViewGroup index=\"0\" text=\"\" class=\"android.view.ViewGroup\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,192][1080,1920]\" resource-id=\"com.bt.bms:id\/nested_coordinator_container\" instance=\"1\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,192][1080,330]\" resource-id=\"com.bt.bms:id\/app_bar_layout\" instance=\"3\"><android.widget.LinearLayout index=\"1\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" chec
+2017-08-14 19:44:33:631 - info: [debug] [UIAUTOMATOR STDOUT] ked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,192][1080,330]\" resource-id=\"com.bt.bms:id\/now_showing_language_cinemas_view\" instance=\"4\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,192][539,330]\" resource-id=\"com.bt.bms:id\/now_showing_language_view\" instance=\"5\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[164,231][230,291]\" resource-id=\"com.bt.bms:id\/now_showing_language_img_view\" instance=\"0\"\/><android.widget.TextView index=\"1\" text=\"Filters\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"true\" bounds=\"[260,201][375,321]\" resource-id=\"com.bt.bms:id\/now_showing_language_text\" instance=\"2\"\/><\/android.widget.LinearLayout><android.view.View index=\"1\" text=\"\" class=\"android.view.View\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[539,222][541,300]\" resource-id=\"\" instance=\"0\"\/><android.widget.LinearLayout index=\"2\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[541,192][1080,330]\" resource-id=\"com.bt.bms:id\/now_showing_cinemas_list_view\" instance=\"6\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[683,231][743,291]\" resource-id=\"com.bt.bms:id\/now_showing_cinema_img_view\" instance=\"1\"\/><android.widget.TextView index=\"1\" text=\"Cinemas\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[773,201][937,321]\" resource-id=\"com.bt.bms:id\/now_showing_cinema_text\" instance=\"3\"\/><\/android.widget.LinearLayout><\/android.widget.LinearLayout><\/android.widget.LinearLayout><android.widget.FrameLayout index=\"1\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,330][1080,1920]\" resource-id=\"\" instance=\"6\"><android.support.v7.widget.RecyclerView index=\"0\" text=\"\" class=\"android.support.v7.widget.RecyclerView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"true\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,366
+2017-08-14 19:44:33:633 - info: [debug] [UIAUTOMATOR STDOUT] ][1080,1920]\" resource-id=\"com.bt.bms:id\/nowshowing_recycler_view\" instance=\"0\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,366][1080,576]\" resource-id=\"\" instance=\"7\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,366][1080,576]\" resource-id=\"\" instance=\"8\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,366][1056,552]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view\" instance=\"7\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,366][1056,552]\" resource-id=\"\" instance=\"2\"><android.widget.RelativeLayout index=\"2\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,366][1056,377]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_rel_movie_text_view\" instance=\"3\"><android.widget.LinearLayout index=\"1\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,366][807,377]\" resource-id=\"\" instance=\"9\"><android.widget.TextView index=\"0\" text=\"English\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,366][186,377]\" resource-id=\"com.bt.bms:id\/nowshowing_text_movie_language\" instance=\"4\"\/><\/android.widget.LinearLayout><\/android.widget.RelativeLayout><android.view.View index=\"3\" text=\"\" class=\"android.view.View\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,407][1056,408]\" resource-id=\"com.bt.bms:id\/make_plan_vertical_divider\" instance=\"1\"\/><android.widget.LinearLayout index=\"4\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,408][1056,552]\" resource-id=\"com.bt.bms:id\/make_new_plan_layout\" instance=\"10\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scroll
+2017-08-14 19:44:33:635 - info: [debug] [UIAUTOMATOR STDOUT] able=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[30,421][786,539]\" resource-id=\"com.bt.bms:id\/ll_now_showing_card_dimension\" instance=\"11\"><android.view.ViewGroup index=\"0\" text=\"\" class=\"android.view.ViewGroup\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[60,451][756,509]\" resource-id=\"\" instance=\"2\"><android.widget.TextView index=\"0\" text=\"4DX\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[60,451][147,504]\" resource-id=\"\" instance=\"5\"\/><\/android.view.ViewGroup><\/android.widget.LinearLayout><android.widget.RelativeLayout index=\"1\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[786,408][1056,552]\" resource-id=\"com.bt.bms:id\/cv_active_plans\" instance=\"4\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[786,408][1050,552]\" resource-id=\"com.bt.bms:id\/rl_active_plan_root\" instance=\"5\"><android.widget.Button index=\"0\" text=\"PLAN IT\" class=\"android.widget.Button\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[786,408][1050,552]\" resource-id=\"com.bt.bms:id\/btn_make_plan\" instance=\"0\"\/><\/android.widget.RelativeLayout><\/android.widget.RelativeLayout><\/android.widget.LinearLayout><\/android.widget.RelativeLayout><\/android.widget.FrameLayout><android.view.View index=\"1\" text=\"\" class=\"android.view.View\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,552][1080,576]\" resource-id=\"\" instance=\"2\"\/><\/android.widget.LinearLayout><\/android.widget.LinearLayout><android.widget.LinearLayout index=\"1\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,576][1080,1339]\" resource-id=\"\" instance=\"12\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,576][1080,1339]\" resource-id=\"\" instance=\"13\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,576][1056,1315]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view\" instance=\"8\"><android.widget.RelativeLayout in
+2017-08-14 19:44:33:639 - info: [debug] [UIAUTOMATOR STDOUT] dex=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,576][1056,1315]\" resource-id=\"\" instance=\"6\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,576][1056,996]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_img_poster\" instance=\"2\"\/><android.widget.RelativeLayout index=\"1\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,841][1056,966]\" resource-id=\"\" instance=\"7\"><android.widget.TextView index=\"0\" text=\"UA\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[60,876][150,966]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_censor_text\" instance=\"6\"\/><android.widget.RelativeLayout index=\"1\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[756,841][1026,966]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_rel_movie_votes_view\" instance=\"8\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[756,844][1026,916]\" resource-id=\"com.bt.bms:id\/nowshowing_card_ratings_container_view\" instance=\"14\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[792,853][867,907]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_img_vote\" instance=\"3\"\/><android.widget.TextView index=\"1\" text=\"82%\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[882,844][990,916]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_text_votes_percentage\" instance=\"7\"\/><\/android.widget.LinearLayout><android.widget.TextView index=\"1\" text=\"34,264 votes\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[756,916][1026,960]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_text_votes\" instance=\"8\"\/><\/android.widget.RelativeLayout><\/android.widget.RelativeLayout><android.widget.RelativeLayout index=\"2\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1026][1056,1140]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_rel_movie_text_view\" instance=\"9\"><android.widget.TextView index=\"0\" text=\"Mom\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,1026][762,1091]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_text_movie_name\" instance=\"9\"\/><android.widget.LinearLayout index=\"1\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,1091][807,1140]\" resource-id=\"\" instance=\"15\"><android.widget.TextView index=\"0\" text=\"Hindi\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,1091][153,1140]\" resource-id=\"com.bt.bms:id\/nowshowing_text_movie_language\" instance=\"10\"\/><\/android.widget.LinearLayout><android.widget.TextView index=\"2\" text=\"BOOK\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[807,1035][1032,1131]\" resource-id=\"com.bt.bms:id\/movie_details_activity_btn_book\" instance=\"11\"\/><\/android.widget.RelativeLayout><android.view.View index=\"3\" text=\"\" class=\"android.view.View\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1170][1056,1171]\" resource-id=\"com.bt.bms:id\/make_plan_vertical_divider\" instance=\"3\"\/><android.widget.LinearLayout index=\"4\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1171][1056,1315]\" resource-id=\"com.bt.bms:id\/make_new_plan_layout\" instance=\"16\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[30,1184][786,1302]\" resource-id=\"com.bt.bms:id\/ll_now_showing_card_dimension\" instance=\"17\"><android.view.ViewGroup index=\"0\" text=\"\" class=\"android.view.ViewGroup\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[60,1214][756,1272]\" resource-id=\"\" instance=\"3\"><android.widget.TextView index=\"0\" text=\"2D\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[60,1214][124,1267]\" resource-id=\"\" instance=\"12\"\/><\/android.vie
+2017-08-14 19:44:33:656 - info: [debug] [UIAUTOMATOR STDOUT] w.ViewGroup><\/android.widget.LinearLayout><android.widget.RelativeLayout index=\"1\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[786,1171][1056,1315]\" resource-id=\"com.bt.bms:id\/cv_active_plans\" instance=\"10\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[786,1171][1050,1315]\" resource-id=\"com.bt.bms:id\/rl_active_plan_root\" instance=\"11\"><android.widget.Button index=\"0\" text=\"PLAN IT\" class=\"android.widget.Button\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[786,1171][1050,1315]\" resource-id=\"com.bt.bms:id\/btn_make_plan\" instance=\"1\"\/><\/android.widget.RelativeLayout><\/android.widget.RelativeLayout><\/android.widget.LinearLayout><\/android.widget.RelativeLayout><\/android.widget.FrameLayout><android.view.View index=\"1\" text=\"\" class=\"android.view.View\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,1315][1080,1339]\" resource-id=\"\" instance=\"4\"\/><\/android.widget.LinearLayout><\/android.widget.LinearLayout><android.widget.LinearLayout index=\"2\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,1339][1080,1920]\" resource-id=\"\" instance=\"18\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,1339][1080,1920]\" resource-id=\"\" instance=\"19\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1339][1056,1920]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view\" instance=\"9\"><android.widget.RelativeLayout index=\"0\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1339][1056,1920]\" resource-id=\"\" instance=\"12\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1339][1056,1759]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_img_poster\" instance=\"4\"\/><android.widget.RelativeLayout index=\"1\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1604][1056,1729]\" resource-id=\"\" instance=\"13\"><android.widget.TextView index=\"0\" text=\"A\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[60,1639][150,1729]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_censor_text\" instance=\"13\"\/><android.widget.RelativeLayout index=\"1\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[756,1604][1026,1729]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_rel_movie_votes_view\" instance=\"14\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[756,1607][1026,1679]\" resource-id=\"com.bt.bms:id\/nowshowing_card_ratings_container_view\" instance=\"20\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[792,1616][867,1670]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_img_vote\" instance=\"5\"\/><android.widget.TextView index=\"1\" text=\"82%\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[882,1607][990,1679]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_text_votes_percentage\" instance=\"14\"\/><\/android.widget.LinearLayout><android.widget.TextView index=\"1\" text=\"8,044 votes\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[756,1679][1026,1723]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_text_votes\" instance=\"15\"\/><\/android.widget.RelativeLayout><\/android.widget.RelativeLayout><android.widget.RelativeLayout index=\"2\" text=\"\" class=\"android.widget.RelativeLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[24,1789][1056,1903]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_rel_movie_text_view\" instance=\"15\"><android.widget.TextView index=\"0\" text=\"Baby Driver\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,1789][762,1854]\" resource-id=\"com.bt.bms:id\/nowshowing_card_view_text_movie_name\" instance=\"16\"\/><android.widget.LinearLayout index=\"1\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\"
+2017-08-14 19:44:33:659 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:662 - info: [debug] [UIAUTOMATOR STDOUT] focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,1854][807,1903]\" resource-id=\"\" instance=\"21\"><android.widget.TextView index=\"0\" text=\"English\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[69,1854][186,1903]\" resource-id=\"com.bt.bms:id\/nowshowing_text_movie_language\" instance=\"17\"\/><\/android.widget.LinearLayout><android.widget.TextView index=\"2\" text=\"BOOK\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[807,1798][1032,1894]\" resource-id=\"com.bt.bms:id\/movie_details_activity_btn_book\" instance=\"18\"\/><\/android.widget.RelativeLayout><\/android.widget.RelativeLayout><\/android.widget.FrameLayout><\/android.widget.LinearLayout><\/android.widget.LinearLayout><\/android.support.v7.widget.RecyclerView><\/android.widget.FrameLayout><\/android.view.ViewGroup><\/android.widget.FrameLayout><\/android.support.v4.view.ViewPager><\/android.widget.FrameLayout><\/android.widget.FrameLayout><android.support.v7.widget.LinearLayoutCompat index=\"2\" text=\"\" class=\"android.support.v7.widget.LinearLayoutCompat\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,1758][1080,1920]\" resource-id=\"com.bt.bms:id\/custom_bottom_bar\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,1781][216,1896]\" resource-id=\"\" instance=\"10\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[81,1805][135,1859]\" resource-id=\"com.bt.bms:id\/view_bottom_item_iv\" instance=\"6\"\/><android.widget.TextView index=\"1\" text=\"Home\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[72,1859][144,1896]\" resource-id=\"com.bt.bms:id\/view_bottom_item_tv\" instance=\"19\"\/><\/android.widget.FrameLayout><android.widget.FrameLayout NAF=\"true\" index=\"1\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[216,1800][432,1878]\" resource-id=\"\" instance=\"11\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[297,1824][351,1878]\" resource-id=\"com.bt.bms:id\/view_bottom_item_iv\" instance=\"7\"\/><\/android.widget.FrameLayout><android.widget.FrameLayout NAF=\"true\" index=\"2\" t
+2017-08-14 19:44:33:663 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:665 - info: [debug] [UIAUTOMATOR STDOUT] ext=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[432,1800][648,1878]\" resource-id=\"\" instance=\"12\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[513,1824][567,1878]\" resource-id=\"com.bt.bms:id\/view_bottom_item_iv\" instance=\"8\"\/><\/android.widget.FrameLayout><android.widget.FrameLayout index=\"3\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" foc
+2017-08-14 19:44:33:665 - info: [debug] [UIAUTOMATOR STDOUT] used=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[648,1800][864,1878]\" resource-id=\"\" instance=\"13\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[729,1824][783,1878]\" resource-id=\"com.bt.bms:id\/view_bottom_item_iv\" instance=\"9\"\/><android.widget.TextView index=\"1\" text=\"*\" class=\"android.widget.TextView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[768,1812][822,1866]\" resource-id=\"com.bt.bms:id\/view_bottom_item_notification_tv\" instance=\"20\"\/><\/android.widget.FrameLayout><android.widget.FrameLayout NAF=\"true\" index=\"4\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[864,1800][1080,1878]\" resource-id=\"\" instance=\"14\"><android.widget.ImageView index=\"0\" text=\"\" class=\"android.widget.ImageView\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[945,1824][999,1878]\" resource-id=\"com.bt.bms:id\/view_bottom_item_iv\" instance=\"10\"\/><\/android.widget.FrameLayout><\/android.support.v7.widget.LinearLayoutCompat><\/android.view.ViewGroup><\/android.support.v4.widget.DrawerLayout><\/android.widget.FrameLayout><\/android.widget.LinearLayout><\/android.widget.FrameLayout><\/android.widget.LinearLayout><android.view.View index=\"1\" text=\"\" class=\"android.view.View\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,72]\" resource-id=\"android:id\/statusBarBackground\" instance=\"5\"\/><\/android.widget.FrameLayout><\/hierarchy>"}[/APPIUM-UIAUTO]
+2017-08-14 19:44:33:667 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:667 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:668 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:668 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:685 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:685 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:685 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:686 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:686 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:687 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:687 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:688 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:688 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:688 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:689 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:689 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:690 - info: [debug] Stream still not complete, waiting
+2017-08-14 19:44:33:690 - info: [debug] Responding to client with success: {"status":0,"value":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><hierarchy rotation=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,1920]\" resource-id=\"\" instance=\"0\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,1920]\" resource-id=\"\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" ...","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:693 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/source 200 405.344 ms - 44407 {"status":0,"value":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><hierarchy rotation=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,1920]\" resource-id=\"\" instance=\"0\"><android.widget.LinearLayout index=\"0\" text=\"\" class=\"android.widget.LinearLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" long-clickable=\"false\" password=\"false\" selected=\"false\" bounds=\"[0,0][1080,1920]\" resource-id=\"\" instance=\"0\"><android.widget.FrameLayout index=\"0\" text=\"\" class=\"android.widget.FrameLayout\" package=\"com.bt.bms\" content-desc=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" scrollable=\"false\" ...","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:701 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:33:701 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:33:702 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:702 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.363 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:707 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:33:708 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:708 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 1.118 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:727 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"xpath","value":"//android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK']"}
+2017-08-14 19:44:33:727 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:33:727 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"xpath","selector":"//android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK']","context":"","multiple":true}]
+2017-08-14 19:44:33:734 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"xpath","selector":"//android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK']","context":"","multiple":true}}
+2017-08-14 19:44:33:734 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:33:734 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:33:734 - info: [debug] [BOOTSTRAP] [debug] Finding //android.widget.TextView[@text='Mom']/../android.widget.TextView[@text='BOOK'] using XPATH with the contextId:  multiple: true
+2017-08-14 19:44:33:883 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[CLASS=android.widget.TextView, INSTANCE=11]
+2017-08-14 19:44:33:884 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[CLASS=android.widget.TextView, INSTANCE=11]
+2017-08-14 19:44:33:884 - info: [debug] [BOOTSTRAP] [debug] Selector ends with instance.
+2017-08-14 19:44:33:925 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[{"ELEMENT":"4"}]}
+2017-08-14 19:44:33:925 - info: [debug] Responding to client with success: {"status":0,"value":[{"ELEMENT":"4"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:926 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 199.423 ms - 89 {"status":0,"value":[{"ELEMENT":"4"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:930 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:33:930 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:33:931 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:931 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.751 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:33:935 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/4/click {"id":"4"}
+2017-08-14 19:44:33:935 - info: [debug] Pushing command to appium work queue: ["element:click",{"elementId":"4"}]
+2017-08-14 19:44:33:939 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"element:click","params":{"elementId":"4"}}
+2017-08-14 19:44:33:939 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:33:939 - info: [debug] [BOOTSTRAP] [debug] Got command action: click
+2017-08-14 19:44:34:500 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:34:500 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:34:501 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/4/click 200 566.108 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:34:504 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:34:505 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:34:505 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:34:505 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.061 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:34:508 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:34:509 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:34:509 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 0.962 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:34:512 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Filters"}
+2017-08-14 19:44:34:513 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:34:513 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Filters","context":"","multiple":true}]
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Filters","context":"","multiple":true}}
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] Finding Filters using NAME with the contextId:  multiple: true
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Filters]
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Filters]
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:34:522 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Filters, INSTANCE=0]
+2017-08-14 19:44:35:634 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Filters]
+2017-08-14 19:44:35:635 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Filters]
+2017-08-14 19:44:35:636 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:35:636 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Filters, INSTANCE=0]
+2017-08-14 19:44:36:489 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (1)
+2017-08-14 19:44:36:489 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Filters, INSTANCE=1]
+2017-08-14 19:44:36:948 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[{"ELEMENT":"5"}]}
+2017-08-14 19:44:36:952 - info: [debug] Responding to client with success: {"status":0,"value":[{"ELEMENT":"5"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:36:952 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 2439.624 ms - 89 {"status":0,"value":[{"ELEMENT":"5"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:36:955 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:36:955 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:36:956 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:36:956 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.047 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:36:959 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/5/displayed {}
+2017-08-14 19:44:36:959 - info: [debug] Pushing command to appium work queue: ["element:getAttribute",{"elementId":"5","attribute":"displayed"}]
+2017-08-14 19:44:36:962 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"element:getAttribute","params":{"elementId":"5","attribute":"displayed"}}
+2017-08-14 19:44:36:962 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:36:962 - info: [debug] [BOOTSTRAP] [debug] Got command action: getAttribute
+2017-08-14 19:44:37:050 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":"true"}
+2017-08-14 19:44:37:051 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:052 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/5/displayed 200 93.165 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:057 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":0}
+2017-08-14 19:44:37:057 - info: [debug] Set Android implicit wait to 0ms
+2017-08-14 19:44:37:057 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:058 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.214 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:061 - info: --> GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context {}
+2017-08-14 19:44:37:061 - info: [debug] Responding to client with success: {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:062 - info: <-- GET /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/context 200 1.061 ms - 84 {"status":0,"value":"NATIVE_APP","sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:067 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements {"using":"name","value":"Filters"}
+2017-08-14 19:44:37:067 - info: [debug] Waiting up to 0ms for condition
+2017-08-14 19:44:37:067 - info: [debug] Pushing command to appium work queue: ["find",{"strategy":"name","selector":"Filters","context":"","multiple":true}]
+2017-08-14 19:44:37:072 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"find","params":{"strategy":"name","selector":"Filters","context":"","multiple":true}}
+2017-08-14 19:44:37:072 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:37:072 - info: [debug] [BOOTSTRAP] [debug] Got command action: find
+2017-08-14 19:44:37:072 - info: [debug] [BOOTSTRAP] [debug] Finding Filters using NAME with the contextId:  multiple: true
+2017-08-14 19:44:37:073 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[DESCRIPTION=Filters]
+2017-08-14 19:44:37:073 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[DESCRIPTION=Filters]
+2017-08-14 19:44:37:073 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:37:073 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[DESCRIPTION=Filters, INSTANCE=0]
+2017-08-14 19:44:37:138 - info: [debug] [BOOTSTRAP] [debug] Using: UiSelector[TEXT=Filters]
+2017-08-14 19:44:37:140 - info: [debug] [BOOTSTRAP] [debug] getElements selector:UiSelector[TEXT=Filters]
+2017-08-14 19:44:37:140 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (0)
+2017-08-14 19:44:37:140 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Filters, INSTANCE=0]
+2017-08-14 19:44:37:231 - info: [debug] [BOOTSTRAP] [debug] Element[] is null: (1)
+2017-08-14 19:44:37:231 - info: [debug] [BOOTSTRAP] [debug] getElements tmp selector:UiSelector[TEXT=Filters, INSTANCE=1]
+2017-08-14 19:44:37:305 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":[{"ELEMENT":"6"}]}
+2017-08-14 19:44:37:306 - info: [debug] Responding to client with success: {"status":0,"value":[{"ELEMENT":"6"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:308 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/elements 200 241.333 ms - 89 {"status":0,"value":[{"ELEMENT":"6"}],"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:327 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts {"type":"implicit","ms":1000}
+2017-08-14 19:44:37:327 - info: [debug] Set Android implicit wait to 1000ms
+2017-08-14 19:44:37:327 - info: [debug] Responding to client with success: {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:328 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/timeouts 200 1.668 ms - 76 {"status":0,"value":null,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:333 - info: --> POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/6/click {"id":"6"}
+2017-08-14 19:44:37:333 - info: [debug] Pushing command to appium work queue: ["element:click",{"elementId":"6"}]
+2017-08-14 19:44:37:336 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"element:click","params":{"elementId":"6"}}
+2017-08-14 19:44:37:336 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+2017-08-14 19:44:37:336 - info: [debug] [BOOTSTRAP] [debug] Got command action: click
+2017-08-14 19:44:37:505 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":true}
+2017-08-14 19:44:37:505 - info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
+2017-08-14 19:44:37:506 - info: <-- POST /wd/hub/session/ef26e6a5-339d-45c2-b96c-65d75cfe8dca/element/6/click 200 173.518 ms - 76 {"status":0,"value":true,"sessionId":"ef26e6a5-339d-45c2-b96c-65d75cfe8dca"}
