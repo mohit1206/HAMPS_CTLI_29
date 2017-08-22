@@ -7,6 +7,7 @@ import static org.testng.Assert.fail;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -256,7 +257,7 @@ public class BaseClass {
 		}
 	}
 
-	public void setDropdown(WebElement element, String value) {
+	public void selectOptionByVisibleText(WebElement element, String value) {
 		try {
 			// waitForPageToLoad();
 			Select select = new Select(element);
@@ -1006,7 +1007,8 @@ public class BaseClass {
 			return getTagName(getElement(element)).equalsIgnoreCase("SELECT");	
 		}
 		
-		public void selectOptionByVisibleText(WebElement element, String text){
+		//done by M
+		/*public void selectOptionByVisibleText(WebElement element, String text){
 			if(isSelectBox(getElement(element))){
 				try{
 					Select select = new Select(getElement(element));
@@ -1020,7 +1022,7 @@ public class BaseClass {
 			}else{
 				fail("ERROR --The element is not of html tag - SELECT , Invalid type for selectOptionByVisibleText");
 			}
-		}
+		}*/
 		
 		public void selectOptionByValue(WebElement element, String value){
 			if(isSelectBox(getElement(element))){
@@ -1306,7 +1308,15 @@ public class BaseClass {
 			return decryptedtext;				
 		}
 		
-		//#########################   PDF To Text conversion Method  ############################################//
+		//#########################   date conversion Method  ############################################//
 		
+		public void changeAnyDateFormat() throws ParseException {
+			SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+	        String dateInString = "12-22-2013";
+	            Date date = formatter.parse(dateInString);
+	            System.out.println(date);
+			String newDate = new SimpleDateFormat("yyyy-MM-dd").format(date);
+			System.out.println("newDate ="+newDate);
+		}
 		
 }

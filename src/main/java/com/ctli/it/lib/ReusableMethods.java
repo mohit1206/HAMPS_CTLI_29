@@ -17,21 +17,25 @@ public class ReusableMethods extends BaseClass{
 	  public void clickdate(String inputDate){
 		    WebElement ele =driver.findElement(By.id("DepartDate"));
 		    ele.click();
-		    String month = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]")).getText();
-		    String year = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]")).getText();
-		    System.out.println("Application month : "+month + " Year :"+year);
-		    int monthNum = getMonthNum(month);
+		    WebElement month = driver.findElement(By.xpath("(//span[@class='ui-datepicker-month'])[1]"));
+		    WebElement year = driver.findElement(By.xpath("(//span[@class='ui-datepicker-year'])[1]"));
+		    String monthName = month.getText();
+		    String yearName = year.getText();
+		    System.out.println("Application month : "+monthName + " Year :"+yearName);
+		    int monthNum = getMonthNum(monthName);
 		    System.out.println("Enum Num : "+monthNum);
 		    String[] parts = inputDate.split("/");
-		    int noOfHits = ((Integer.parseInt(parts[2])-Integer.parseInt(year))*12)+(Integer.parseInt(parts[1])-monthNum);
+		    int noOfHits = ((Integer.parseInt(parts[2])-Integer.parseInt(yearName))*12)+(Integer.parseInt(parts[1])-monthNum);
 		    System.out.println("No OF Hits "+noOfHits);
 		    for(int i=0; i< noOfHits;i++){
 		    driver.findElement(By.xpath("//span[text()='Next']")).click();
 		    System.out.println("clicked on next");
 		    }
+		    //select row of first month
 		    List<WebElement> cals=driver.findElements(By.xpath("(//table[@class='ui-datepicker-calendar'])[1]//tr"));
 		    System.out.println("total row "+ cals.size());
 		    for( WebElement daterow : cals){
+		    	//select cells of both months
 		    List<WebElement> datenums = daterow.findElements(By.xpath("//div[@id='ui-datepicker-div']/div//td"));
 		    /*iterating the "td" list*/
 		    for(WebElement date : datenums ){

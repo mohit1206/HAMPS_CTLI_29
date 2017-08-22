@@ -15,14 +15,12 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.xml.XmlTest;
 
 import com.ctli.it.lib.AppiumServerStarting;
 import com.ctli.it.lib.AutomationConstants;
-import com.ctli.it.lib.ExcelDriver;
 import com.ctli.it.lib.ReadPropertyFile;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -64,7 +62,12 @@ public class TestNgInitialization implements AutomationConstants {
 			String Key = "webdriver.ie.driver";
 			String value = "./Resources/IEDriverServer.exe";
 			System.setProperty(Key, value);
-			driver = new InternetExplorerDriver();
+			// Create the DesiredCapability object of InternetExplorer
+			 DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+			 // Settings to Accept the SSL Certificate in the Capability object
+			 capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+			 capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+			 driver = new InternetExplorerDriver(capabilities);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get(ReadPropertyFile.getPropertyValue("URL"));
