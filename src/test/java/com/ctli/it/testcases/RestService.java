@@ -2,7 +2,8 @@ package com.ctli.it.testcases;
 
 import org.testng.annotations.Test;
 
-import com.ctli.it.restAssured.Rest_Methods;
+import com.ctli.it.restassured.Rest_Methods;
+
 
 public class RestService {
 		@Test
