@@ -658,7 +658,7 @@ public class BaseClass {
 		}
 		
 		private WebDriverWait getWaiter(){
-			WebDriverWait waiter = new WebDriverWait(driver,120);
+			WebDriverWait waiter = new WebDriverWait(driver,60);
 			return waiter;		
 		}
 	
@@ -1318,5 +1318,102 @@ public class BaseClass {
 			String newDate = new SimpleDateFormat("yyyy-MM-dd").format(date);
 			System.out.println("newDate ="+newDate);
 		}
+		
+		
+	//############.......................################
+		public void checkPageIsReady() {
+
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+
+
+			if (js.executeScript("return document.readyState").toString().equals("complete")){ 
+				System.out.println("Page Is loaded.");
+				return; 
+			} 
+
+			for (int i=0; i<25; i++){ 
+				try {
+					Thread.sleep(1000);
+				}catch (InterruptedException e) {} 
+				if (js.executeScript("return document.readyState").toString().equals("complete")){ 
+					break; 
+				}   
+			}
+		}
+		
+		public void scrollToWebElement(WebElement element){
+			//WebElement element = driver.findElement(locator);
+			try {
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		public boolean slider(WebElement elemnt, int x, int y) throws Throwable {
+			boolean status = false;
+			try {
+				waitTillElementToBeClickble(elemnt);
+				Actions moveElement = new Actions(driver);
+				new Actions(driver).clickAndHold(elemnt).moveByOffset(x, y).release().perform();
+				moveElement.build().perform();
+				status = true;
+				System.out.println("Slider moved");
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+			}
+			return status;
+		}
+	
+		
+		public void waitTillElementToBeClickble(WebElement ele) throws Throwable {
+			WebDriverWait wait = new WebDriverWait(driver, TIME_OUT);
+			try {
+				wait.until(ExpectedConditions.elementToBeClickable(ele));
+				
+			} catch (Exception e) {
+				System.out.println("element is not clickable");
+				e.printStackTrace();
+			} 
+			}
+		
+		
+		public void dragAndDrop(WebElement sourceLocator, WebElement destinationLocator, String locatorName) throws Throwable {
+			try {
+
+				Actions builder = new Actions(this.driver);
+				org.openqa.selenium.interactions.Action dragAndDrop = builder.clickAndHold(sourceLocator)
+						.moveToElement(destinationLocator).release(destinationLocator).build();
+				dragAndDrop.perform();
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+			} 
+		}
+		
+		public void avoidStaleElement(String xpath) throws InterruptedException
+		{
+			Thread.sleep(5000);
+			int count=0;
+			while (count < 4) {
+				   try {
+				    //If exception generated that means It Is not able to find element then catch block will handle It.
+				    WebElement staledElement = driver.findElement(By.xpath(xpath));
+				    //If exception not generated that means element found and element text get cleared.
+				    staledElement.click();    
+				   } catch (StaleElementReferenceException e) {
+				    e.toString();
+				    System.out.println("Trying to recover from a stale element :" + e.getMessage());
+				    count = count + 1;
+				   }
+				   count = count + 4;
+			
+			}}
+		
+		
+		
 		
 }
