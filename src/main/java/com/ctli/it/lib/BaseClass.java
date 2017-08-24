@@ -1321,7 +1321,7 @@ public class BaseClass {
 		
 		
 	//############.......................################
-		public void checkPageIsReady() {
+		public void checkPageIsReady(int waitTimeInSec) {
 
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 
@@ -1331,7 +1331,7 @@ public class BaseClass {
 				return; 
 			} 
 
-			for (int i=0; i<25; i++){ 
+			for (int i=0; i<waitTimeInSec; i++){ 
 				try {
 					Thread.sleep(1000);
 				}catch (InterruptedException e) {} 
