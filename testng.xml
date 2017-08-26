@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
- <test name="GC Test">
+ <test name="FF Test">
 <parameter name="browser" value="appium"/>
     <classes>
       <class name="com.ctli.it.mobiletestcase.BookMyShowTestCase"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
+ <test name="Mobile Test">
+<parameter name="browser" value="FF"/>
+    <classes>
+      <class name="com.ctli.it.testcases.LoginTestCase"/>
+    </classes>
+  </test>
+    <test name="Rest Test">
+<parameter name="browser" value="Rest"/>
+    <classes>
+      <class name="com.ctli.it.testcases.RestService"/>
+    </classes>
+  </test>
 </suite> <!-- Suite -->
