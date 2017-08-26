@@ -21,7 +21,8 @@ public class WebServicesReusables {
    public static String PostResource()
    {
 	   return ReadPropertyFile.getPropertyValue("PostResources");
-   }public static String DeleteResource()
+   }
+   public static String DeleteResource()
    {
 	   return ReadPropertyFile.getPropertyValue("DeleteResources");
    }

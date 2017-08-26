@@ -6,12 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.relevantcodes.extentreports.ExtentTest;
+
 
 
 public class ReusableMethods extends BaseClass{
 	
-	public ReusableMethods(WebDriver driver){
-		super(driver);
+	public ReusableMethods(WebDriver driver, ExtentTest testReport){
+		super(driver, testReport);
 	}
 
 	  public void clickdate(String inputDate){

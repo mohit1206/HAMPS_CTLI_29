@@ -1,11 +1,9 @@
 package com.ctli.it.testcases;
 
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.ctli.it.webPage.LoginPage;
+import com.ctli.it.lib.TestNgInitialization;
 import com.ctli.it.webPage.SfaPage;
-import com.relevantcodes.extentreports.LogStatus;
 
 
 public class LoginTestCase  extends TestNgInitialization{
@@ -23,9 +21,6 @@ public class LoginTestCase  extends TestNgInitialization{
 		//SfaPage sf=new SfaPage(driver);
 		sf.click_sso();
 		//testReport.log(LogStatus.PASS,"login with valid credential");
-//		sf.enterDetails();
-//		sf.clickLink();
-//		sf.click_configure();
 		
 		
 	}

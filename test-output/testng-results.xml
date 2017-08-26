@@ -2,63 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="27863" started-at="2017-08-16T12:36:20Z" finished-at="2017-08-16T12:36:48Z">
+  <suite name="Default suite" duration-ms="4693" started-at="2017-08-26T12:37:25Z" finished-at="2017-08-26T12:37:29Z">
     <groups>
     </groups>
-    <test name="GC Test" duration-ms="27863" started-at="2017-08-16T12:36:20Z" finished-at="2017-08-16T12:36:48Z">
-      <class name="com.ctli.it.testcases.LoginTestCase">
-        <test-method status="PASS" signature="initialSetUp()[pri:0, instance:com.ctli.it.testcases.LoginTestCase@53b32d7]" name="initialSetUp" is-config="true" duration-ms="219" started-at="2017-08-16T18:06:20Z" finished-at="2017-08-16T18:06:20Z">
+    <test name="Default test" duration-ms="4693" started-at="2017-08-26T12:37:25Z" finished-at="2017-08-26T12:37:29Z">
+      <class name="com.ctli.it.restAssured.Rest_Methods">
+        <test-method status="PASS" signature="get()[pri:0, instance:com.ctli.it.restAssured.Rest_Methods@53f65459]" name="get" duration-ms="4677" started-at="2017-08-26T18:07:25Z" finished-at="2017-08-26T18:07:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initialSetUp -->
-        <test-method status="PASS" signature="launchApp(java.lang.reflect.Method, org.testng.xml.XmlTest)[pri:0, instance:com.ctli.it.testcases.LoginTestCase@53b32d7]" name="launchApp" is-config="true" duration-ms="24237" started-at="2017-08-16T18:06:20Z" finished-at="2017-08-16T18:06:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.ctli.it.testcases.LoginTestCase.testcase() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Test: "GC Test" verbose:1[parameters:browser=>FF][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.testcases.LoginTestCase]  packages:] ]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApp -->
-        <test-method status="PASS" signature="testcase()[pri:0, instance:com.ctli.it.testcases.LoginTestCase@53b32d7]" name="testcase" duration-ms="3583" started-at="2017-08-16T18:06:45Z" finished-at="2017-08-16T18:06:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testcase -->
-        <test-method status="PASS" signature="closeApp(java.lang.reflect.Method, org.testng.xml.XmlTest)[pri:0, instance:com.ctli.it.testcases.LoginTestCase@53b32d7]" name="closeApp" is-config="true" duration-ms="32" started-at="2017-08-16T18:06:48Z" finished-at="2017-08-16T18:06:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.ctli.it.testcases.LoginTestCase.testcase() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Test: "GC Test" verbose:1[parameters:browser=>FF][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.testcases.LoginTestCase]  packages:] ]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-        <test-method status="PASS" signature="afterSuite(org.testng.xml.XmlTest)[pri:0, instance:com.ctli.it.testcases.LoginTestCase@53b32d7]" name="afterSuite" is-config="true" duration-ms="466" started-at="2017-08-16T18:06:48Z" finished-at="2017-08-16T18:06:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[Test: "GC Test" verbose:1[parameters:browser=>FF][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.testcases.LoginTestCase]  packages:] ]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- com.ctli.it.testcases.LoginTestCase -->
-    </test> <!-- GC Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- get -->
+      </class> <!-- com.ctli.it.restAssured.Rest_Methods -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

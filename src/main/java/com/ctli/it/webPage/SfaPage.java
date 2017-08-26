@@ -12,13 +12,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class SfaPage extends BaseClass {
 
-	public SfaPage(WebDriver driver) {
-		super(driver);
-		PageFactory.initElements(driver, this);
-	}
-	
 	public SfaPage(WebDriver driver, ExtentTest testReport) {
-		super(driver,testReport);
+		super(driver, testReport);
 		PageFactory.initElements(driver, this);
 	}
 

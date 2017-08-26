@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ctli.it.lib.BaseClass;
 import com.ctli.it.lib.MobileBaseClass;
+import com.relevantcodes.extentreports.ExtentTest;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -17,8 +18,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class BookMyShowPage extends MobileBaseClass {
 
-	public BookMyShowPage(AndroidDriver driver) {
-		super(driver);
+	public BookMyShowPage(AndroidDriver driver, ExtentTest testReport) {
+		super(driver, testReport);
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 		
 	}

@@ -4,9 +4,14 @@ package com.ctli.it.lib;
 
 import static org.testng.Assert.fail;
 
+import java.awt.AWTException;
+import java.awt.HeadlessException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,17 +26,26 @@ import java.util.regex.Pattern;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
-import javax.mail.*;
-import javax.mail.internet.*;
+import javax.imageio.ImageIO;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByName;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.InvalidSelectorException;
-import org.openqa.selenium.By.ByName;
-import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
@@ -40,26 +54,24 @@ import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.UnreachableBrowserException;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.openqa.selenium.support.ui.Wait;
 
+import com.ctl.cipherTools.CipherMe;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.ctl.cipherTools.*;
 
 public class BaseClass {
 
@@ -70,10 +82,6 @@ public class BaseClass {
 	private CipherMe cipher;
 	private byte[] encryptedvalue;
 	private String decryptedtext;
-	
-	public BaseClass(WebDriver driver) {
-		this.driver = driver;
-	}
 	
 	public  BaseClass(WebDriver driver,ExtentTest testReport)
 	{
@@ -100,7 +108,6 @@ public class BaseClass {
 			ele = dWait.until(ExpectedConditions.visibilityOf(ele));
 			Actions action = new Actions(driver);
 			action.moveToElement(ele).perform();
-			// action.moveToElement(ele).build().perform();
 		} catch (Exception e) {
 			fail("Failed mouseHover() with Exception: " + e.getMessage());
 		}
@@ -126,7 +133,7 @@ public class BaseClass {
 			Thread.sleep(3000);
 			return !(clickElm.getAttribute("class").contains("disabledLink"));
 		} catch (Exception e) {
-			// fail("Failed mouseSelect() with Exception: " + e.getMessage());
+			fail("Failed mouseSelect() with Exception: " + e.getMessage());
 			return false;
 		}
 	}
@@ -136,7 +143,6 @@ public class BaseClass {
 		boolean success = false;
 		while (attempts < 3) {
 			try {
-				// System.out.print("attempts = " + attempts + "\n");
 				mouseHover(hoverElm);
 				WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
 				Actions action = new Actions(driver);
@@ -186,8 +192,7 @@ public class BaseClass {
 		}
 	}
 
-	public void click(WebElement elm) {
-
+	public void click(WebElement elm){
 		try {
 			WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
 			elm = dWait.until(ExpectedConditions.elementToBeClickable(elm));
@@ -195,19 +200,25 @@ public class BaseClass {
 			System.out.println("clicked Done");
 			testReport.log(LogStatus.INFO,"successfully clicked on element");
 		} catch (Exception e) {
-
 			fail("Failed click " + elm.getTagName() + " with Exception: " + e.getMessage());
-
 		}
-
 	}
-
-	public boolean isVisible(WebElement element) {
+	
+	public Boolean isElementvisibleornot(WebElement element) {
 		try {
-			// waitForPageToLoad();
 			WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
 			dWait.until(ExpectedConditions.visibilityOf(element));
 			//testReport.log(LogStatus.INFO,"element is visible");
+			return true;
+		} catch (NoSuchElementException  e) {
+			return false;
+		}
+	} 
+	
+	public boolean isVisible(WebElement element){
+		try {
+			WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
+			dWait.until(ExpectedConditions.visibilityOf(element));
 			return true;
 		} catch (Throwable e) {
 			return false;
@@ -216,7 +227,6 @@ public class BaseClass {
 
 	public boolean isSelected(WebElement element) {
 		try {
-			// waitForPageToLoad();
 			WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
 			element = dWait.until(ExpectedConditions.visibilityOf(element));
 			
@@ -227,39 +237,16 @@ public class BaseClass {
 		}
 	}
 
-	public boolean isSelected(String locator) {
-		// waitForPageToLoad();
-		WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
-		return dWait.until(ExpectedConditions.elementToBeSelected(By.xpath(locator)));
-	}
-
-	/**
-	 * Type something into an input field. WebDriver doesn't normally clear these *
-	 * before typing, so this method does that first.
-	 */
-
 	public void type(WebElement element, String text) {
-		// waitForPageToLoad();
 		WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
 		element = dWait.until(ExpectedConditions.visibilityOf(element));
 		element.clear();
 		element.sendKeys(text);
 	}
 
-	public void setDropdown(String locator, String value) {
-		try {
-			// waitForPageToLoad();
-			WebElement element = driver.findElement(By.xpath(locator));
-			Select select = new Select(element);
-			select.selectByVisibleText(value);
-		} catch (Exception e) {
-			fail("Failed setDropdown " + locator + " with Exception: " + e.getMessage());
-		}
-	}
-
 	public void selectOptionByVisibleText(WebElement element, String value) {
 		try {
-			// waitForPageToLoad();
+			waitForPageToLoad();
 			Select select = new Select(element);
 			List<WebElement> options = select.getOptions();
 			for (int i = 0; i < options.size(); i++) {
@@ -277,7 +264,7 @@ public class BaseClass {
 
 	public boolean verifyElementInDropdown(WebElement element, String value) {
 		try {
-			// waitForPageToLoad();
+			waitForPageToLoad();
 			Select select = new Select(element);
 			List<WebElement> options = select.getOptions();
 			for (int i = 0; i < options.size(); i++) {
@@ -293,20 +280,14 @@ public class BaseClass {
 	}
 
 	public Boolean isEnabled(WebElement element) {
-		// waitForPageToLoad();
 		WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
 		element = dWait.until(ExpectedConditions.visibilityOf(element));
 		return element.isEnabled();
 	}
 
-	public Boolean isDisplayed(WebElement element) {
-		WebDriverWait dWait = new WebDriverWait(driver, TIME_OUT);
-		element = dWait.until(ExpectedConditions.visibilityOf(element));
-		return element.isDisplayed();
-	}
-
 	public void mouseHoverWithJs(WebElement hoverElm, WebElement clickElm) {
 		try {
+			waitForPageToLoad();
 			String javaScript = "var evObj = document.createEvent('MouseEvents');"
 					+ "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);"
 					+ "arguments[0].dispatchEvent(evObj);";
@@ -323,9 +304,9 @@ public class BaseClass {
 		}
 	}
 
-	// AB67816
 	public void mouseSelectWithRetry(WebElement hoverElm1, WebElement hoverElm2, WebElement hoverElm3,
 			String clickElmName) {
+		waitForPageToLoad();
 		int attempts = 0;
 		boolean success = false;
 		while (attempts < 3) {
@@ -363,6 +344,7 @@ public class BaseClass {
 
 	public void jsClick(WebElement element) {
 		try {
+			waitForPageToLoad();
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", element);
 		} catch (Exception e) {
@@ -375,6 +357,7 @@ public class BaseClass {
 	
 	public  void highlightElement(WebElement element)
 	{
+		waitForPageToLoad();
 		String presentColor=element.getCssValue("backgroundColor");
 		String newCoclor="rgb(255,255,0)";
 		
@@ -388,6 +371,7 @@ public class BaseClass {
 	
 	public void webScroll()
 	{
+		waitForPageToLoad();
 		try {
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
 		    jse.executeScript("window.scrollBy(0,250)", "");
@@ -403,8 +387,8 @@ public class BaseClass {
 	
 	public void jsType(WebElement element, String xp)
 	{
+		waitForPageToLoad();
 		String xp1="\"arguments[0].value='"+xp+"'\"";
-//		((JavascriptExecutor)driver).executeAsyncScript("arguments[0].value='admin'",element);
 		((JavascriptExecutor)driver).executeAsyncScript(xp1,element);
 	}
 	
@@ -414,25 +398,17 @@ public class BaseClass {
 		
 		String strRGB=element.getCssValue("color");
 		System.out.println(strRGB);
-		//testReport.log(LogStatus.INFO,"RGB is:"+strRGB);
 		String hex=convertRGBtoHex(strRGB);	
-		
 		String msg1="<span style='color:"+eHexColor+";'>Expected color</span>";
-		//testReport.log(LogStatus.INFO,"HTML",msg1);
-		
 		String msg2="<span style='color:"+hex+";'>Actual color</span>";
-		//testReport.log(LogStatus.INFO,"HTML",msg2);
 		System.out.println(hex);
-		
 		if(hex.equals(eHexColor))
 		{
 			System.out.println("successfully verified");
-			//testReport.log(LogStatus.PASS,"Element color is matching");
 		}
 		else
 		{
 			System.out.println("not verified");
-			//testReport.log(LogStatus.FAIL,"Element color is not matching");
 		}
 	}
 	
@@ -478,130 +454,80 @@ public class BaseClass {
 		
 	}
 	
-	/*public void sentAnEmail()
+	public void getVisibleWIndowScreenShotWithRobot() throws IOException, HeadlessException, AWTException{
+		BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+	    
+		// This will store screenshot on Specific location
+		ImageIO.write(image, "png", new File("./ScreenShots"+"/"+getFormatedDateTime()+".png")); 
+	}
+	
+	public void sentAnEmail()
 	{
-		 String fromMail =ReadPropertyFile.getPropertyValue("FromEmail");
-		String tomail=ReadPropertyFile.getPropertyValue("TOEMAIL");
-		String pwd=ReadPropertyFile.getPropertyValue("PASSWORD");
-		String emailText=ReadPropertyFile.getPropertyValue("EMAILTEXT");
-		String cc=ReadPropertyFile.getPropertyValue("CCEMAIL");
-		String subject=ReadPropertyFile.getPropertyValue("SUBJECT");
+	       
+	       final String fromMail =ReadPropertyFile.getPropertyValue("FromEmail");
+	       final String tomail=ReadPropertyFile.getPropertyValue("TOEMAIL");
+	       String pwd=ReadPropertyFile.getPropertyValue("PASSWORD");
+	       String emailText=ReadPropertyFile.getPropertyValue("EMAILTEXT");
+	       String cc=ReadPropertyFile.getPropertyValue("CCEMAIL");
+	       String subject=ReadPropertyFile.getPropertyValue("SUBJECT");
+	       
+	       Properties props = new Properties();
+	       props.put("mail.smtp.host", "mailgate.uswc.uswest.com");
+	       props.put("mail.smtp.socketFactory.port", "25");
+	       //props.put("mail.smtp.socketFactory.class",
+	       //"javax.net.ssl.SSLSocketFactory");
+	       props.put("mail.smtp.auth", "true");
+	       props.put("mail.smtp.port", "25");
+	       Session session = Session.getDefaultInstance(props,
+	       new javax.mail.Authenticator() {
+	       protected PasswordAuthentication getPasswordAuthentication() {
+	       return new PasswordAuthentication(fromMail,tomail);
+	       }
+	       });
+	       try {
+	       MimeMessage message = new MimeMessage(session);
+	       message.setFrom(new InternetAddress(fromMail));
+	       
+	       String[] recipientList = tomail.split(",");
+	       InternetAddress[] recipientAddress = new InternetAddress[recipientList.length];
+	       int counter = 0;
+	       for (String recipient : recipientList) {
+	           recipientAddress[counter] = new InternetAddress(recipient.trim());
+	           counter++;
+	       }
+	       message.setRecipients(Message.RecipientType.TO, recipientAddress);
+
+	       message.setRecipient(Message.RecipientType.CC, new InternetAddress(cc));
+	       
+	        
+	       
+	       
+	       
+	       message.setSubject(subject);
+	       MimeBodyPart messageBodyPart = new MimeBodyPart();
+	       messageBodyPart.setText(emailText);
+
+	       Multipart multipart = new MimeMultipart();
+	       multipart.addBodyPart(messageBodyPart);
+
+	       messageBodyPart = new MimeBodyPart();
+
+
+	    String file= System.getProperty("user.dir")+"\\Report\\results.html";
+	    String fileName = "reults.html";
+	       DataSource source = new FileDataSource(file);
+	       messageBodyPart.setDataHandler(new DataHandler(source));
+	       messageBodyPart.setFileName(fileName);
+	       multipart.addBodyPart(messageBodyPart);
+
+	       message.setContent(multipart);
+
+	       Transport.send(message);
+	       } catch (MessagingException ex) {
+	       throw new RuntimeException(ex);
+	       }
+	}
 		
-		Properties props = new Properties();
-		props.put("mail.smtp.host", "mailgate.uswc.uswest.com");
-		props.put("mail.smtp.socketFactory.port", "25");
-		//props.put("mail.smtp.socketFactory.class",
-		//"javax.net.ssl.SSLSocketFactory");
-		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.port", "25");
-		Session session = Session.getDefaultInstance(props,
-		new javax.mail.Authenticator() {
-		protected PasswordAuthentication getPasswordAuthentication() {
-		return new PasswordAuthentication(fromMail,tomail);
-		}
-		});
-		try {
-		MimeMessage message = new MimeMessage(session);
-		message.setFrom(new InternetAddress(fromMail));
-		
-		String[] recipientList = tomail.split(",");
-		InternetAddress[] recipientAddress = new InternetAddress[recipientList.length];
-		int counter = 0;
-		for (String recipient : recipientList) {
-		    recipientAddress[counter] = new InternetAddress(recipient.trim());
-		    counter++;
-		}
-		message.setRecipients(Message.RecipientType.TO, recipientAddress);
-
-		message.setRecipient(Message.RecipientType.CC, new InternetAddress(cc));
-		 
-		 
-		
-		
-		
-		message.setSubject(subject);
-		MimeBodyPart messageBodyPart = new MimeBodyPart();
-		messageBodyPart.setText(emailText);
-
-		Multipart multipart = new MimeMultipart();
-		multipart.addBodyPart(messageBodyPart);
-
-		messageBodyPart = new MimeBodyPart();
-
-
-	    String file= System.getProperty("user.dir")+"\\src\\test\\resources\\FeaturDataResults.xlsx";
-	    String fileName = "OutputData.xlsx";
-		DataSource source = new FileDataSource(file);
-		messageBodyPart.setDataHandler(new DataHandler(source));
-		messageBodyPart.setFileName(fileName);
-		multipart.addBodyPart(messageBodyPart);
-
-		message.setContent(multipart);
-
-		Transport.send(message);
-		} catch (MessagingException ex) {
-		throw new RuntimeException(ex);
-		}
-	}*/
-	
-	
-	
-	
-	//##########################################################################################################
-	
-		public String getDate(String... format) {
-			DateFormat dateFormat;
-			if (format.length > 0) {
-				dateFormat = new SimpleDateFormat(format[0]);
-			} else {
-				dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-			}
-			Date date = new Date();
-			return dateFormat.format(date);
-		}
-
-		public String getParentHandle() {
-			return parentHandle;
-		}
-
-		public void setParentHandle() {
-			parentHandle = driver.getWindowHandle();
-		}
-
-		public String getChildHandle() {
-			return childHandle;
-		}
-
-		public void setChildHandle() {
-			for (String winHandle : driver.getWindowHandles()) {
-				if (!parentHandle.equals(winHandle)) {
-					childHandle = winHandle;
-					break;
-				}
-			}
-		}
-		
-		public void switchToChildWindow() {
-			setChildHandle();
-			driver.switchTo().window(childHandle);
-			maximizeWindow();
-		}
-
-		public void switchToParentWindow() {
-			driver.switchTo().window(parentHandle);
-		}
-
-		public void waitForChildWindowToAppear() {
-			ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					return driver.getWindowHandles().size() == 2;
-				}
-			};
-			Wait(10000);
-		}
-
-		
-
 		public Wait<WebDriver> Wait(int... waitTime) {
 			int waitTimeInSeconds;
 			if (waitTime.length > 0) {
@@ -615,20 +541,6 @@ public class BaseClass {
 					.ignoring(NoSuchElementException.class)
 					.ignoring(StaleElementReferenceException.class)
 					.ignoring(WebDriverException.class);
-		}
-
-		public void WaitForPageToLoad(int... waitTime) {
-			ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					return ((JavascriptExecutor) driver).executeScript(
-							"return document.readyState").equals("complete");
-				}
-			};
-			if (waitTime.length > 0) {
-				Wait(waitTime).until(expectation);
-			} else {
-				Wait(30).until(expectation);
-			}
 		}
 
 		public void WaitForFrameToLoad(final String frameName, int... waitTime) {
@@ -646,9 +558,6 @@ public class BaseClass {
 			driver.switchTo().defaultContent();
 		}
 	
-	
-	
-//-------------------------------------MOHIT-------------------------------------------
 		public void storeRunTimeValue(String runtimeTestDataName, String runtimeTestDataValue){
 			RuntimeData.storeRuntimeData(runtimeTestDataName, runtimeTestDataValue);
 		}
@@ -668,14 +577,15 @@ public class BaseClass {
 				targetElement = element;
 				if(targetElement.isDisplayed()){
 					System.out.println("INFO -- Element is displayed and Present on the Webpage. :: \""+element+"\"");
-//					return targetElement;
+					return targetElement;
 				}else{
 					System.out.println("ERROR --Element is not enabled and not present on the WebPage. :: \""+element+"\" .");
+				return null;
 				}	
 			}catch(Exception e){
 				fail("Locator not valid Exception or syntax wrong. Entered locatorName is ::\""+element+"\" .");
+				return null;
 			}
-			return targetElement;		
 		}
 		
 		public void switchToFrameById(String frameID){
@@ -691,7 +601,7 @@ public class BaseClass {
 			}		
 		}
 
-		public void switchToFrameByIndex(String index){
+		public void switchToFrameByIndex(int index){
 			try{
 				driver.switchTo().frame(index);
 				System.out.println("INFO -- Switched into the frame having frame index :: \""+index+"\" .");
@@ -728,32 +638,17 @@ public class BaseClass {
 			}
 		}
 		
-		public void elementToBeClickable(WebElement element) {
+		public void defaultContent(){
 			try{
-				getWaiter().until(ExpectedConditions.elementToBeClickable(getElement(element)));
-				System.out.println("INFO -- Waiting until the element to be clickable. Object:: \""+element+"\" .");
-			}catch(TimeoutException e){
-				fail("FATAL--Problem in waiting the object to be clickable : \""+element+"\" .");
+				driver.switchTo().defaultContent();
+				System.out.println("INFO -- Switched into the parent frame");
+			}catch(NoSuchFrameException e){
+				System.out.println("ERROR --unable to switch to parent frame Exception.");
+			}catch(WebDriverException e){
+				System.out.println("ERROR --Unable to switch to the parent frame.");
 			}
-			
 		}
 	
-		public void waitFortextToBePresent(WebElement element, String text){
-			try{
-				getWaiter().until(ExpectedConditions.textToBePresentInElement(getElement(element), text));
-				System.out.println("INFO -- Waiting until the element text to be. text:: \""+text+"\" .");
-				
-			}catch(Exception e){
-				fail("FATAL--Problem in waiting the text:: \""+text+"\" to be present on  : \""+element+"\" .");
-			}
-			
-		}
-
-		public void visibilityOfElement(By by) {
-			getWaiter().until(ExpectedConditions.visibilityOfElementLocated(by));
-			System.out.println("INFO -- Waiting until the element to be visible. Object :: \""+by+"\" .");
-		}
-
 		public void navigateTo(String url) {
 			try{
 				driver.navigate().to(url);
@@ -894,7 +789,7 @@ public class BaseClass {
 			}		
 		}
 		
-		public void Uncheck(WebElement element){
+		public void unCheck(WebElement element){
 			WebElement targetElement = getElement(element);
 			if(targetElement.isSelected()){
 				try{
@@ -908,7 +803,6 @@ public class BaseClass {
 				}
 			}else{
 				fail("INFO -- Already the element is unchecked. Object :: \""+element+"\" .");
-				
 			}
 		}
 		
@@ -926,17 +820,6 @@ public class BaseClass {
 			doubleClickAction.doubleClick(targetElement).build().perform();
 			
 		}
-	
-		private boolean isElementPresent(WebElement element) {
-			WebElement targetElement = getElement(element);
-			if(targetElement.isDisplayed()){
-				System.out.println("INFO -- \""+element+"\" is present on the Page.");
-				return true;			
-			}else{
-				fail("ERROR --\""+element+"\" is not present on the Page.");
-				return false;
-			}			
-		}
 		
 		public String getAttribute(WebElement element, String attribute){
 			WebElement targetElement = getElement(element);
@@ -948,40 +831,6 @@ public class BaseClass {
 				fail("ERROR --Unable to get the \""+attribute+"\" attribute value for the Object::\""+element+"\" .");
 			}
 			return attributeValue;
-		}
-		
-		public void verifyElementPresent(WebElement element) {
-			System.out.println("INFO -- The Expected element \""+getElement(element)+"\" should be Present.");
-			Assert.assertTrue(isElementPresent(getElement(element)), "The Expected element \""+getElement(element)+"\" should be Present.");
-		}
-		
-		private boolean isTextPresent(String text) {
-			try{
-				String bodytext = driver.findElement(By.tagName("body")).getText();
-				return bodytext.contains(text);
-			}catch(WebDriverException e){
-				fail("ERROR --Unable to verify the text is present or not \""+text+"\" .");
-				return false;
-			}	
-		}
-		
-		public void verifyTextPresent(String text) {
-			System.out.println("INFO -- The expected text \""+text+"\" should be displayed");
-			Assert.assertTrue(isTextPresent(text), "The expected text \""+text+"\" should be displayed");
-			 
-		}
-		
-		public void verifyTextAbsent(String text) {
-			System.out.println("INFO -- The expected text \""+text+"\" should not be displayed");
-			Assert.assertFalse(isTextPresent(text), "The expected text \""+text+"\" should not be displayed");
-			
-		}
-		
-		public void verifyText(WebElement element, String text) {
-			String textFromElement = getText(getElement(element));
-			System.out.println("INFO -- The text from the element \"" + textFromElement +"\" should be equal to expected text \"" +text+"\" .");
-			Assert.assertEquals("The text from the element \"" + textFromElement +"\" should be equal to expected text \"" +text+"\" .", text, textFromElement);
-			 
 		}
 		
 		public void verifyValue(WebElement element,String expectedValue) {
@@ -1007,23 +856,6 @@ public class BaseClass {
 			return getTagName(getElement(element)).equalsIgnoreCase("SELECT");	
 		}
 		
-		//done by M
-		/*public void selectOptionByVisibleText(WebElement element, String text){
-			if(isSelectBox(getElement(element))){
-				try{
-					Select select = new Select(getElement(element));
-					select.selectByVisibleText(text);
-					System.out.println("INFO -- \""+text+"\" Option is selected for the object :: \""+getElement(element)+"\"");
-				}catch(NoSuchElementException e){
-					fail("ERROR --\""+text+"\" Option is not found in the list for the object :: \""+getElement(element)+"\"");
-				}catch(WebDriverException e){
-					fail("ERROR --\""+text+"\" Option is unable to select for the object :: \""+getElement(element)+"\"");
-				}
-			}else{
-				fail("ERROR --The element is not of html tag - SELECT , Invalid type for selectOptionByVisibleText");
-			}
-		}*/
-		
 		public void selectOptionByValue(WebElement element, String value){
 			if(isSelectBox(getElement(element))){
 				try{
@@ -1041,11 +873,11 @@ public class BaseClass {
 			}
 		}
 		
-		public void selectOptionByIndex(WebElement element, String index){
+		public void selectOptionByIndex(WebElement element, int index){
 			if(isSelectBox(getElement(element))){
 				try{
 					Select select = new Select(getElement(element));
-					select.selectByIndex(Integer.parseInt(index));
+					select.selectByIndex(index);
 					System.out.println("INFO -- \""+index+"\" Option is selected for the object :: \""+getElement(element)+"\"");
 				}catch(NoSuchElementException e){
 					fail("ERROR --\""+index+"\" Option is not found in the list for the object :: \""+getElement(element)+"\"");
@@ -1177,17 +1009,6 @@ public class BaseClass {
 					
 		}
 		
-		public void verifyAlertText(String text){
-			Alert alert = getAlert();
-			try{			
-				System.out.println("INFO -- The text from the alert \""+alert.getText()+"\" should be equal to expected text \""+text+"\".");
-				Assert.assertEquals("The text from the alert \""+alert.getText()+"\" should be equal to expected text \""+text+"\".", text,alert.getText());
-			}catch(Exception e){
-				fail("INFO -- The text from the alert \""+alert.getText()+"\" is not equal to expected text \""+text+"\".");
-			}
-			
-		}
-		
 		public void verifyCurrentURL(String url) throws Exception{
 			try{
 				System.out.println("INFO -- The URL of the current window should be \""+url+ "\" and actual url :: \""+ driver.getCurrentUrl() + "\"");
@@ -1250,26 +1071,6 @@ public class BaseClass {
 			
 		}
 		
-		public void invisibilityOfElement(By locator){
-			try{
-				getWaiter().until(ExpectedConditions.invisibilityOfElementLocated(locator));
-				System.out.println("Info--Element is invisible in Page: object ::\""+locator+"\".");
-			}catch(Exception e){
-				fail("Error :: Element is not invisible in page Element ::\""+locator+"\" .");
-			}
-			 
-		}	
-		
-		public void think(long seconds){
-			try{
-				long milliseconds = seconds*1000;
-				Thread.sleep(milliseconds);
-				System.out.println("INFO -- Slept upto \""+seconds+"\" seconds");
-			}catch(Exception e){
-				fail("ERROR --Unable to sleep upto the given seconds:: \""+seconds+"\" .");
-			}		
-		}
-		
 //#########################   Autoit Method  ############################################//
 		
 		public void autoitexe(String batfile) {
@@ -1310,12 +1111,12 @@ public class BaseClass {
 		
 		//#########################   date conversion Method  ############################################//
 		
-		public void changeAnyDateFormat() throws ParseException {
-			SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-	        String dateInString = "12-22-2013";
-	            Date date = formatter.parse(dateInString);
+		public static void changeAnyDateFormat(String stringDate, String dateFormat, String preDateFormat) throws ParseException {
+			//in preDateFormat need to pass the format of given Date(eg- dd/MM/yyyy)
+			SimpleDateFormat formatter = new SimpleDateFormat(preDateFormat);
+	            Date date = formatter.parse(stringDate);
 	            System.out.println(date);
-			String newDate = new SimpleDateFormat("yyyy-MM-dd").format(date);
+			String newDate = new SimpleDateFormat(dateFormat).format(date);
 			System.out.println("newDate ="+newDate);
 		}
 		
@@ -1381,20 +1182,7 @@ public class BaseClass {
 			}
 		
 		
-		public void dragAndDrop(WebElement sourceLocator, WebElement destinationLocator, String locatorName) throws Throwable {
-			try {
-
-				Actions builder = new Actions(this.driver);
-				org.openqa.selenium.interactions.Action dragAndDrop = builder.clickAndHold(sourceLocator)
-						.moveToElement(destinationLocator).release(destinationLocator).build();
-				dragAndDrop.perform();
-			} catch (Exception e) {
-				
-				e.printStackTrace();
-			} 
-		}
-		
-		public void avoidStaleElement(String xpath) throws InterruptedException
+		public void avoidStaleElementClick(String xpath) throws InterruptedException
 		{
 			Thread.sleep(5000);
 			int count=0;
@@ -1411,9 +1199,34 @@ public class BaseClass {
 				   }
 				   count = count + 4;
 			
-			}}
+			}
+			}
+		
+		public String avoidStaleElementText(String xpath) throws InterruptedException
+		{
+			String text= null;
+			Thread.sleep(5000);
+			int count=0;
+			while (count < 4) {
+				   try {
+				    //If exception generated that means It Is not able to find element then catch block will handle It.
+				    WebElement staledElement = driver.findElement(By.xpath(xpath));
+				    //If exception not generated that means element found and element text get cleared.
+				    text =staledElement.getText();  
+				   } catch (StaleElementReferenceException e) {
+				    System.out.println(e.toString());
+				    System.out.println("Trying to recover from a stale element :" + e.getMessage());
+				    count = count + 1;
+				   }
+				   count = count + 4;
+			
+			}
+			return text;
+			}
 		
 		
-		
+		public void waitForPageToLoad(){
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		}
 		
 }

@@ -102,6 +102,570 @@
     <groupId>com.lowagie</groupId>
     <artifactId>itext</artifactId>
     <version>2.1.7</version>
-</dependency>
+	</dependency>
+	<dependency>
+        <groupId>org.apache.pdfbox</groupId>
+        <artifactId>pdfbox</artifactId>
+        <version>2.0.6</version>
+	</dependency>
+	<dependency>
+		    <groupId>javax.activation</groupId>
+		    <artifactId>activation</artifactId>
+		    <version>1.1</version>
+	</dependency>
+	<dependency>
+		<groupId>com.smartbear.utils.analytics</groupId>
+		<artifactId>analytics-core</artifactId>
+		<version>5.3.0</version>
+		 <systemPath>${project.basedir}/Resources/JarFiles/analytics-core-5.3.0.jar</systemPath>
+		 <scope>system</scope>
+	</dependency>
+	<dependency>
+		    <groupId>org.codehaus.mojo</groupId>
+		    <artifactId>animal-sniffer-annotations</artifactId>
+		    <version>1.11</version>
+	</dependency>
+	<dependency>
+		    <groupId>org.bouncycastle</groupId>
+		    <artifactId>bcprov-jdk15</artifactId>
+		    <version>1.44</version>
+	</dependency>
+	<dependency>
+		    <groupId>com.jgoodies</groupId>
+		    <artifactId>binding</artifactId>
+		    <version>2.0.1</version>
+	</dependency>
+	<dependency>
+		    <groupId>gnu.cajo</groupId>
+		    <artifactId>cajo</artifactId>
+		    <version>1.142</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/cajo-1.142.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	<dependency>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
+		    <version>1.7.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
+	<dependency>
+	    <groupId>commons-cli</groupId>
+	    <artifactId>commons-cli</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+	<dependency>
+	    <groupId>commons-codec</groupId>
+	    <artifactId>commons-codec</artifactId>
+	    <version>1.3</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+	<dependency>
+	    <groupId>commons-collections</groupId>
+	    <artifactId>commons-collections</artifactId>
+	    <version>3.2.1</version>  
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+	<dependency>
+	    <groupId>commons-httpclient</groupId>
+	    <artifactId>commons-httpclient</artifactId>
+	    <version>3.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.4</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+	<dependency>
+	    <groupId>commons-lang</groupId>
+	    <artifactId>commons-lang</artifactId>
+	    <version>2.4</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.sourceforge.cssparser/cssparser -->
+	<dependency>
+	    <groupId>net.sourceforge.cssparser</groupId>
+	    <artifactId>cssparser</artifactId>
+	    <version>0.9.5</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+	<dependency>
+	    <groupId>dom4j</groupId>
+	    <artifactId>dom4j</artifactId>
+	    <version>1.6.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.sf.ezmorph/ezmorph -->
+	<dependency>
+	    <groupId>net.sf.ezmorph</groupId>
+	    <artifactId>ezmorph</artifactId>
+	    <version>1.0.5</version>
+	</dependency>
+<dependency>
+		    <groupId>org.apache.flex</groupId>
+		    <artifactId>flex-messaging-common</artifactId>
+		    <version>1.0</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/flex-messaging-common-1.0.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	
+		<dependency>
+		    <groupId>org.apache.flex</groupId>
+		    <artifactId>flex-messaging-core</artifactId>
+		    <version>1.0</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/flex-messaging-core-1.0.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	
+		<dependency>
+		    <groupId>org.apache.flex</groupId>
+		    <artifactId>flex-messaging-opt</artifactId>
+		    <version>1.0</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/flex-messaging-opt-1.0.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	
+		<dependency>
+		    <groupId>org.apache.flex</groupId>
+		    <artifactId>flex-messaging-proxy</artifactId>
+		    <version>1.0</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/flex-messaging-proxy-1.0.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	
+		<dependency>
+		    <groupId>org.apache.flex</groupId>
+		    <artifactId>flex-messaging-remoting</artifactId>
+		    <version>1.0</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/flex-messaging-remoting-1.0.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.jgoodies/forms -->
+	<dependency>
+	    <groupId>com.jgoodies</groupId>
+	    <artifactId>forms</artifactId>
+	    <version>1.0.7</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.http-client/google-http-client -->
+	<dependency>
+	    <groupId>com.google.http-client</groupId>
+	    <artifactId>google-http-client</artifactId>
+	    <version>1.21.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client -->
+	<dependency>
+	    <groupId>com.google.oauth-client</groupId>
+	    <artifactId>google-oauth-client</artifactId>
+	    <version>1.21.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hamcrest</groupId>
+	    <artifactId>hamcrest-core</artifactId>
+	    <version>1.3</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+		    <groupId>hermesjms</groupId>
+		    <artifactId>hermes</artifactId>
+		    <version>1.14</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/hermes-1.14.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	<dependency>
+		    <groupId>httpclient</groupId>
+		    <artifactId>httpclient-cache</artifactId>
+		    <version>4.1.1</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/httpclient-cache-4.1.1.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	<dependency>
+		    <groupId>httpclient</groupId>
+		    <artifactId>httpclient-cache</artifactId>
+		    <version>4.1.1</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/httpclient-cache-4.1.1.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	<dependency>
+		    <groupId>httpcore</groupId>
+		    <artifactId>httpcore-nio</artifactId>
+		    <version>4.1.1</version>
+		    <systemPath>${project.basedir}/Resources/JarFiles/httpcore-nio-4.1.1.jar</systemPath>
+		 	<scope>system</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.sonatype.install4j</groupId>
+	    <artifactId>i4jruntime</artifactId>
+	    <version>5.1.14</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/i4jruntime-5.1.14.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+	<dependency>
+	    <groupId>org.javassist</groupId>
+	    <artifactId>javassist</artifactId>
+	    <version>3.16.1-GA</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
+	<dependency>
+	    <groupId>jaxen</groupId>
+	    <artifactId>jaxen</artifactId>
+	    <version>1.1-beta-8</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.samba.jcifs/jcifs -->
+	<dependency>
+	    <groupId>org.samba.jcifs</groupId>
+	    <artifactId>jcifs</artifactId>
+	    <version>1.2.9</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/jdom/jdom -->
+	<dependency>
+	    <groupId>jdom</groupId>
+	    <artifactId>jdom</artifactId>
+	    <version>1.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.codehaus.jettison/jettison -->
+	<dependency>
+	    <groupId>org.codehaus.jettison</groupId>
+	    <artifactId>jettison</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mortbay.jetty/jetty -->
+	<dependency>
+	    <groupId>org.mortbay.jetty</groupId>
+	    <artifactId>jetty</artifactId>
+	    <version>6.1.26</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mortbay.jetty/jetty-util -->
+	<dependency>
+	    <groupId>org.mortbay.jetty</groupId>
+	    <artifactId>jetty-util</artifactId>
+	    <version>6.1.26</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.jms/jms -->
+	<dependency>
+	    <groupId>javax.jms</groupId>
+	    <artifactId>jms</artifactId>
+	    <version>1.1</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/jms-1.1.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+	<dependency>
+	    <groupId>joda-time</groupId>
+	    <artifactId>joda-time</artifactId>
+	    <version>1.6.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/rhino/js -->
+	<dependency>
+	    <groupId>rhino</groupId>
+	    <artifactId>js</artifactId>
+	    <version>1.7R2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+	<dependency>
+	    <groupId>net.sf.json-lib</groupId>
+	    <artifactId>json-lib</artifactId>
+	    <version>2.2.2-jdk15</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/json-lib-2.2.2-jdk15.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+	<dependency>
+	    <groupId>com.jayway.jsonpath</groupId>
+	    <artifactId>json-path</artifactId>
+	    <version>0.9.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.minidev/json-smart -->
+	<dependency>
+	    <groupId>net.minidev</groupId>
+	    <artifactId>json-smart</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.xml.bind/jsr173_api -->
+	<dependency>
+	    <groupId>javax.xml.bind</groupId>
+	    <artifactId>jsr173_api</artifactId>
+	    <version>1.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+	<dependency>
+	    <groupId>com.google.code.findbugs</groupId>
+	    <artifactId>jsr305</artifactId>
+	    <version>1.3.9</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.sf.jtidy/jtidy -->
+	<dependency>
+	    <groupId>net.sf.jtidy</groupId>
+	    <artifactId>jtidy</artifactId>
+	    <version>r872-jdk15</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/jtidy-r872-jdk15.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<dependency>
+	    <groupId>com.l2fprod.common</groupId>
+	    <artifactId>l2fprod-common-directorychooser</artifactId>
+	    <version>7.3</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/l2fprod-common-directorychooser-7.3.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<dependency>
+	    <groupId>com.l2fprod.common</groupId>
+	    <artifactId>l2fprod-common-fontchooser</artifactId>
+	    <version>7.3</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/l2fprod-common-fontchooser-7.3.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.14</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.looks</groupId>
+	    <artifactId>looks-2.2.0r</artifactId>
+	    <version>2.2.0</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/looks-2.2.0.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+	<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>mail</artifactId>
+	    <version>1.4</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-plugin-api -->
+	<dependency>
+	    <groupId>org.apache.maven</groupId>
+	    <artifactId>maven-plugin-api</artifactId>
+	    <version>2.0</version>
+	</dependency>
+		<dependency>
+	    <groupId>net.sourceforge.nekohtml</groupId>
+	    <artifactId>nekohtml</artifactId>
+	    <version>1.9.14</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/ca.juliusdavies/not-yet-commons-ssl -->
+	<dependency>
+	    <groupId>ca.juliusdavies</groupId>
+	    <artifactId>not-yet-commons-ssl</artifactId>
+	    <version>0.3.11</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.opensaml/opensaml -->
+	<dependency>
+	    <groupId>org.opensaml</groupId>
+	    <artifactId>opensaml</artifactId>
+	    <version>2.5.1-1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.opensaml/openws -->
+	<dependency>
+	    <groupId>org.opensaml</groupId>
+	    <artifactId>openws</artifactId>
+	    <version>1.4.2-1</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.github.markusbernhardt</groupId>
+	    <artifactId>proxy-vole</artifactId>
+	    <version>20131209</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/proxy-vole-20131209.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
+	<dependency>
+	    <groupId>org.reflections</groupId>
+	    <artifactId>reflections</artifactId>
+	    <version>0.9.9-RC1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fifesoft/rsyntaxtextarea -->
+	<dependency>
+	    <groupId>com.fifesoft</groupId>
+	    <artifactId>rsyntaxtextarea</artifactId>
+	    <version>2.5.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.w3c.css/sac -->
+	<dependency>
+	    <groupId>org.w3c.css</groupId>
+	    <artifactId>sac</artifactId>
+	    <version>1.3</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.sourceforge.saxon/saxon -->
+	<dependency>
+	    <groupId>net.sourceforge.saxon</groupId>
+	    <artifactId>saxon</artifactId>
+	    <version>9.1.0.8</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.sf.saxon/saxon-dom -->
+	<dependency>
+	    <groupId>net.sf.saxon</groupId>
+	    <artifactId>saxon-dom</artifactId>
+	    <version>9.1.0.8</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/saxon-dom-9.1.0.8j.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/xalan/serializer -->
+	<dependency>
+	    <groupId>xalan</groupId>
+	    <artifactId>serializer</artifactId>
+	    <version>2.7.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mortbay.jetty/servlet-api -->
+	<dependency>
+	    <groupId>org.mortbay.jetty</groupId>
+	    <artifactId>servlet-api</artifactId>
+	    <version>2.5-20081211</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.6.1</version>
+	</dependency>
+	<dependency>
+		<groupId>com.smartbear.soapui</groupId>
+        <artifactId>soapui</artifactId>
+        <version>5.3.0</version>
+		<systemPath>${project.basedir}/Resources/JarFiles/soapui-5.3.0.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.swinglabs/swingx -->
+	<dependency>
+	    <groupId>com.smartbear.soapui</groupId>
+	    <artifactId>swingx-soapui</artifactId>
+	    <version>1.0.0</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/swingx-soapui.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.ws.commons.util/ws-commons-util -->
+	<dependency>
+	    <groupId>org.apache.ws.commons.util</groupId>
+	    <artifactId>ws-commons-util</artifactId>
+	    <version>1.0.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/wsdl4j/wsdl4j -->
+	<dependency>
+	    <groupId>wsdl4j</groupId>
+	    <artifactId>wsdl4j</artifactId>
+	    <version>1.6.2-fixed</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/wsdl4j-1.6.2-fixed.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.ws.security/wss4j -->
+	<dependency>
+	    <groupId>org.apache.ws.security</groupId>
+	    <artifactId>wss4j</artifactId>
+	    <version>1.6.16</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/xalan/xalan -->
+	<dependency>
+	    <groupId>xalan</groupId>
+	    <artifactId>xalan</artifactId>
+	    <version>2.7.1</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/xalan-2.7.1.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans-xpath -->
+	<dependency>
+	    <groupId>xbean_xpath</groupId>
+	    <artifactId>xbean_xpath</artifactId>
+	    <version>2.4.0</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/xbean_xpath-2.4.0.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.unitils.soapui/unitils-soapui -->
+	<dependency>
+	    <groupId>xbean</groupId>
+	    <artifactId>xbean-fixed</artifactId>
+	    <version>2.4.0</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/xbean-fixed-2.4.0.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/xerces/xercesImpl -->
+	<dependency>
+	    <groupId>xerces</groupId>
+	    <artifactId>xercesImpl</artifactId>
+	    <version>2.9.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
+	<dependency>
+	    <groupId>xml-apis</groupId>
+	    <artifactId>xml-apis</artifactId>
+	    <version>1.3.04</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.xerces/xml-apis -->
+	<dependency>
+	    <groupId>xerces</groupId>
+	    <artifactId>xml-apis</artifactId>
+	    <version>2.9.1</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/xml-apis-2.9.1.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/xerces/xmlParserAPIs -->
+	<dependency>
+	    <groupId>xerces</groupId>
+	    <artifactId>xmlParserAPIs</artifactId>
+	    <version>2.6.2</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans-xmlpublic -->
+	<dependency>
+	    <groupId>xmlpublic</groupId>
+	    <artifactId>xmlpublic</artifactId>
+	    <version>2.4.0</version>
+	    <systemPath>${project.basedir}/Resources/JarFiles/xmlpublic-2.4.0.jar</systemPath>
+		<scope>system</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.santuario/xmlsec -->
+	<dependency>
+	    <groupId>org.apache.santuario</groupId>
+	    <artifactId>xmlsec</artifactId>
+	    <version>1.4.5</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.opensaml/xmltooling -->
+	<dependency>
+	    <groupId>org.opensaml</groupId>
+	    <artifactId>xmltooling</artifactId>
+	    <version>1.3.2-1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/xmlunit/xmlunit -->
+	<dependency>
+	    <groupId>xmlunit</groupId>
+	    <artifactId>xmlunit</artifactId>
+	    <version>1.2</version>
+	    <scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/xom/xom -->
+	<dependency>
+	    <groupId>xom</groupId>
+	    <artifactId>xom</artifactId>
+	    <version>1.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
+	<dependency>
+	    <groupId>com.thoughtworks.xstream</groupId>
+	    <artifactId>xstream</artifactId>
+	    <version>1.3.1</version>
+	</dependency>	
+	<dependency>
+	    <groupId>org.apache.oltu.oauth2</groupId>
+	    <artifactId>org.apache.oltu.oauth2.client</artifactId>
+	    <version>0.31</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.oltu.oauth2/org.apache.oltu.oauth2.common -->
+	<dependency>
+	    <groupId>org.apache.oltu.oauth2</groupId>
+	    <artifactId>org.apache.oltu.oauth2.common</artifactId>
+	    <version>0.31</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.oltu.oauth2/org.apache.oltu.oauth2.httpclient4 -->
+	<dependency>
+	    <groupId>org.apache.oltu.oauth2</groupId>
+	    <artifactId>org.apache.oltu.oauth2.httpclient4</artifactId>
+	    <version>0.31</version>
+	</dependency>
   </dependencies>
 </project>

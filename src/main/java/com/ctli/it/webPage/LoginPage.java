@@ -13,18 +13,12 @@ public class LoginPage extends BaseClass {
 	@FindBy(xpath="//a[text()='Gmail']")
 	public WebElement btn_Gmail;
 	
-	public LoginPage(WebDriver driver) {
-		super(driver);
-		PageFactory.initElements(driver, this);
-		
-	}
-	   
-	
 	public LoginPage(WebDriver driver, ExtentTest testReport) {
-		super(driver,testReport);
+		super(driver, testReport);
 		PageFactory.initElements(driver, this);
 		
 	}
+
 	public void demo()
 	{
 	click(btn_Gmail);

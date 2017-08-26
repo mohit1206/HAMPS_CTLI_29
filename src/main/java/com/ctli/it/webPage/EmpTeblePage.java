@@ -7,10 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.ctli.it.lib.BaseClass;
+import com.relevantcodes.extentreports.ExtentTest;
 
 public class EmpTeblePage  extends BaseClass {
-	public EmpTeblePage(WebDriver driver) {
-		super(driver);
+	public EmpTeblePage(WebDriver driver, ExtentTest testReport) {
+		super(driver, testReport);
 	}
 	static int column;
 	

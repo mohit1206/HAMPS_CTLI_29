@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]">
-  <parameter name="browser" value="FF"/>
-  <test name="GC Test(failed)">
-    <parameter name="browser" value="FF"/>
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.ctli.it.testcases.LoginTestCase">
+      <class name="com.ctli.it.soap.Refrence">
         <methods>
-          <include name="afterSuite"/>
-          <include name="closeApp"/>
-          <include name="initialSetUp"/>
-          <include name="launchApp"/>
-          <include name="testcase"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- com.ctli.it.testcases.LoginTestCase -->
+      </class> <!-- com.ctli.it.soap.Refrence -->
     </classes>
-  </test> <!-- GC Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
