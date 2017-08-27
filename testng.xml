@@ -19,4 +19,11 @@
       <class name="com.ctli.it.testcases.RestService"/>
     </classes>
   </test>
+  
+     <test name="soap Test">
+<parameter name="browser" value="soap"/>
+    <classes>
+      <class name="com.ctli.it.soap.CelsiusToFahrenheit"/>
+    </classes>
+  </test>
 </suite> <!-- Suite -->

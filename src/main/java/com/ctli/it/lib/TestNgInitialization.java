@@ -124,7 +124,7 @@ public class TestNgInitialization implements AutomationConstants {
 		  if(browser.equalsIgnoreCase("ff")||browser.equalsIgnoreCase("gc")||browser.equalsIgnoreCase("ie")){
 			  driver.close();
 		  }else if (browser.equalsIgnoreCase("appium")) {
-			mobiledriver.closeApp();
+			mobiledriver.close();
 		}
 		
 	}
