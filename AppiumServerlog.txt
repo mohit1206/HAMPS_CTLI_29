@@ -1,93 +1,32 @@
-2017-08-26 10:27:38:312 - info: Welcome to Appium v1.4.16 (REV ae6877eff263066b26328d457bd285c0cc62430d)
-2017-08-26 10:27:38:313 - info: Appium REST http interface listener started on 0.0.0.0:4723
-2017-08-26 10:27:38:315 - info: [debug] Non-default server args: {"log":"C:\\TestAutothon Practice FW\\TestNG\\.\\AppiumServerlog.txt"}
-2017-08-26 10:27:38:315 - info: Console LogLevel: debug
-2017-08-26 10:27:38:316 - info: File LogLevel: debug
-2017-08-26 10:27:38:610 - info: --> GET /wd/hub/status {}
-2017-08-26 10:27:38:611 - info: [debug] Responding to client with success: {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
-2017-08-26 10:27:38:615 - info: <-- GET /wd/hub/status 200 5.588 ms - 105 {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
-2017-08-26 10:27:39:309 - info: --> POST /wd/hub/session {"desiredCapabilities":{"browserName":"Chrome","chromedriverExecutable":"C:\\TestAutothon Practice FW\\TestNG\\Resources\\chromedriver.exe","platformName":"Android","deviceName":"e754d6d3","version":"5.1.1"}}
-2017-08-26 10:27:39:310 - info: Client User-Agent string: Apache-HttpClient/4.5.2 (Java/1.8.0_92)
-2017-08-26 10:27:39:311 - info: [debug] The following desired capabilities were provided, but not recognized by appium. They will be passed on to any other services running on this server. : chromedriverExecutable, version
-2017-08-26 10:27:39:312 - info: Set mode: Proxying straight through to Chromedriver
-2017-08-26 10:27:39:312 - info: [debug] Looks like we want chrome on android
-2017-08-26 10:27:39:313 - info: [debug] Creating new appium session 079d46a2-7e7e-4e1d-80a9-8de9da5470b3
-2017-08-26 10:27:39:314 - info: [debug] Checking whether adb is present
-2017-08-26 10:27:39:539 - info: [debug] Using adb from C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe
-2017-08-26 10:27:39:539 - info: [debug] Using fast reset? true
-2017-08-26 10:27:39:539 - info: [debug] Preparing device for session
-2017-08-26 10:27:39:539 - info: [debug] Not checking whether app is present since we are assuming it's already on the device
-2017-08-26 10:27:39:540 - info: Retrieving device
-2017-08-26 10:27:39:540 - info: [debug] Trying to find a connected android device
-2017-08-26 10:27:39:540 - info: [debug] Getting connected devices...
-2017-08-26 10:27:39:541 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe devices
-2017-08-26 10:27:39:849 - info: [debug] 1 device(s) connected
-2017-08-26 10:27:39:849 - info: Found device e754d6d3
-2017-08-26 10:27:39:850 - info: [debug] Setting device id to e754d6d3
-2017-08-26 10:27:39:850 - info: [debug] Waiting for device to be ready and to respond to shell commands (timeout = 5)
-2017-08-26 10:27:39:851 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 wait-for-device
-2017-08-26 10:27:40:063 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 shell "echo 'ready'"
-2017-08-26 10:27:40:299 - info: [debug] Starting logcat capture
-2017-08-26 10:27:40:439 - info: [debug] Pushing unlock helper app to device...
-2017-08-26 10:27:40:459 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 install "C:\Program Files (x86)\Appium\node_modules\appium\build\unlock_apk\unlock_apk-debug.apk"
-2017-08-26 10:27:45:478 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 shell "dumpsys window"
-2017-08-26 10:27:45:787 - info: [debug] Screen already unlocked, continuing.
-2017-08-26 10:27:45:788 - info: [debug] Forwarding system:4724 to device:4724
-2017-08-26 10:27:45:788 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 forward tcp:4724 tcp:4724
-2017-08-26 10:27:45:972 - info: [debug] Pushing appium bootstrap to device...
-2017-08-26 10:27:45:974 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 push "C:\\Program Files (x86)\\Appium\\node_modules\\appium\\build\\android_bootstrap\\AppiumBootstrap.jar" /data/local/tmp/
-2017-08-26 10:27:46:185 - info: Starting App
-2017-08-26 10:27:46:186 - info: [debug] Attempting to kill all 'uiautomator' processes
-2017-08-26 10:27:46:186 - info: [debug] Getting all processes with 'uiautomator'
-2017-08-26 10:27:46:186 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 shell "ps 'uiautomator'"
-2017-08-26 10:27:46:575 - info: [debug] No matching processes found
-2017-08-26 10:27:46:575 - info: [debug] Running bootstrap
-2017-08-26 10:27:46:575 - info: [debug] spawning: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s e754d6d3 shell uiautomator runtest AppiumBootstrap.jar -c io.appium.android.bootstrap.Bootstrap -e pkg com.android.chrome -e disableAndroidWatchers false
-2017-08-26 10:27:48:208 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: numtests=1
-2017-08-26 10:27:48:209 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: stream=
-2017-08-26 10:27:48:209 - info: [debug] [UIAUTOMATOR STDOUT] io.appium.android.bootstrap.Bootstrap:
-2017-08-26 10:27:48:209 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
-2017-08-26 10:27:48:209 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: test=testRunServer
-2017-08-26 10:27:48:209 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: class=io.appium.android.bootstrap.Bootstrap
-2017-08-26 10:27:48:210 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: current=1
-2017-08-26 10:27:48:210 - info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS_CODE: 1
-2017-08-26 10:27:48:268 - info: [debug] [BOOTSTRAP] [debug] Socket opened on port 4724
-2017-08-26 10:27:48:269 - info: [debug] [BOOTSTRAP] [debug] Appium Socket Server Ready
-2017-08-26 10:27:48:270 - info: [debug] [BOOTSTRAP] [debug] Loading json...
-2017-08-26 10:27:48:276 - info: [debug] Pushing command to appium work queue: ["getDataDir",{}]
-2017-08-26 10:27:48:278 - info: [debug] [BOOTSTRAP] [debug] Registered crash watchers.
-2017-08-26 10:27:48:284 - info: [debug] [BOOTSTRAP] [debug] Client connected
-2017-08-26 10:27:48:287 - info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDataDir","params":{}}
-2017-08-26 10:27:48:288 - info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
-2017-08-26 10:27:48:289 - info: [debug] [BOOTSTRAP] [debug] Got command action: getDataDir
-2017-08-26 10:27:48:291 - info: [debug] [BOOTSTRAP] [debug] Returning result: {"status":0,"value":"\/data\/local\/tmp"}
-2017-08-26 10:27:48:293 - info: [debug] dataDir set to: /data/local/tmp
-2017-08-26 10:27:48:294 - info: Chromedriver: Changed state to 'starting'
-2017-08-26 10:27:48:298 - info: Chromedriver: Set chromedriver binary as: C:\TestAutothon Practice FW\TestNG\Resources\chromedriver.exe
-2017-08-26 10:27:48:299 - info: Chromedriver: Killing any old chromedrivers, running: FOR /F "usebackq tokens=5" %a in (`netstat -nao ^| findstr /R /C:"9515 "`) do (FOR /F "usebackq" %b in (`TASKLIST /FI "PID eq %a" ^| findstr /I chromedriver.exe`) do (IF NOT %b=="" TASKKILL /F /PID %a))
-2017-08-26 10:27:48:748 - info: Chromedriver: No old chromedrivers seemed to exist
-2017-08-26 10:27:48:749 - info: Chromedriver: Spawning chromedriver with: C:\TestAutothon Practice FW\TestNG\Resources\chromedriver.exe --url-base=wd/hub --port=9515
-2017-08-26 10:27:48:912 - info: Chromedriver: [STDOUT] Starting ChromeDriver 2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41) on port 9515
-Only local connections are allowed.
-2017-08-26 10:27:48:914 - info: JSONWP Proxy: Proxying [GET /status] to [GET http://127.0.0.1:9515/wd/hub/status] with no body
-2017-08-26 10:27:49:023 - info: JSONWP Proxy: Got response with status 200: "{\"sessionId\":\"\",\"status\":0,\"value\":{\"build\":{\"version\":\"alpha\"},\"os\":{\"arch\":\"x86_64\",\"name\":\"Windows NT\",\"version\":\"6.1.7601 SP1\"}}}"
-2017-08-26 10:27:49:024 - info: JSONWP Proxy: Proxying [POST /session] to [POST http://127.0.0.1:9515/wd/hub/session] with body: {"desiredCapabilities":{"chromeOptions":{"androidPackage":"com.android.chrome","androidDeviceSerial":"e754d6d3"}}}
-2017-08-26 10:27:59:299 - info: JSONWP Proxy: Got response with status 200: {"sessionId":"2ea6796a9b5ef0913087a3e0302a6382","status":0,"value":{"acceptSslCerts":true,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"browserName":"chrome","chrome":{"chromedr...
-2017-08-26 10:27:59:300 - info: Chromedriver: Changed state to 'online'
-2017-08-26 10:27:59:300 - info: [debug] Overriding session id with "2ea6796a9b5ef0913087a3e0302a6382"
-2017-08-26 10:27:59:300 - info: [debug] Device launched! Ready for commands
-2017-08-26 10:27:59:300 - info: [debug] Setting command timeout to the default of 60 secs
-2017-08-26 10:27:59:300 - info: [debug] Appium session started with sessionId 2ea6796a9b5ef0913087a3e0302a6382
-2017-08-26 10:27:59:302 - info: <-- POST /wd/hub/session 303 19992.438 ms - 70 
-2017-08-26 10:27:59:314 - info: --> GET /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382 {}
-2017-08-26 10:27:59:314 - info: JSONWP Proxy: Proxying [GET /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382] to [GET http://127.0.0.1:9515/wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382] with body: {}
-2017-08-26 10:27:59:318 - info: JSONWP Proxy: Got response with status 200: {"sessionId":"2ea6796a9b5ef0913087a3e0302a6382","status":0,"value":{"acceptSslCerts":true,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"browserName":"chrome","chrome":{"chromedr...
-2017-08-26 10:27:59:318 - info: JSONWP Proxy: Replacing sessionId 2ea6796a9b5ef0913087a3e0302a6382 with 2ea6796a9b5ef0913087a3e0302a6382
-2017-08-26 10:27:59:319 - info: <-- GET /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382 200 5.738 ms - 665 
-2017-08-26 10:27:59:331 - info: --> POST /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382/timeouts {"type":"implicit","ms":20000}
-2017-08-26 10:27:59:332 - info: JSONWP Proxy: Proxying [POST /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382/timeouts] to [POST http://127.0.0.1:9515/wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382/timeouts] with body: {"type":"implicit","ms":20000}
-2017-08-26 10:27:59:335 - info: JSONWP Proxy: Got response with status 200: {"sessionId":"2ea6796a9b5ef0913087a3e0302a6382","status":0,"value":null}
-2017-08-26 10:27:59:335 - info: JSONWP Proxy: Replacing sessionId 2ea6796a9b5ef0913087a3e0302a6382 with 2ea6796a9b5ef0913087a3e0302a6382
-2017-08-26 10:27:59:336 - info: <-- POST /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382/timeouts 200 4.727 ms - 72 
-2017-08-26 10:27:59:341 - info: --> POST /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382/url {"url":"https://www.google.com/"}
-2017-08-26 10:27:59:341 - info: JSONWP Proxy: Proxying [POST /wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382/url] to [POST http://127.0.0.1:9515/wd/hub/session/2ea6796a9b5ef0913087a3e0302a6382/url] with body: {"url":"https://www.google.com/"}
+2017-08-28 05:11:54:689 - info: Welcome to Appium v1.4.16 (REV ae6877eff263066b26328d457bd285c0cc62430d)
+2017-08-28 05:11:54:690 - info: Appium REST http interface listener started on 0.0.0.0:4723
+2017-08-28 05:11:54:693 - info: [debug] Non-default server args: {"log":"C:\\Users\\AB49014\\git\\HAMPS_26Aug\\.\\AppiumServerlog.txt"}
+2017-08-28 05:11:54:693 - info: Console LogLevel: debug
+2017-08-28 05:11:54:693 - info: File LogLevel: debug
+2017-08-28 05:11:55:051 - info: --> GET /wd/hub/status {}
+2017-08-28 05:11:55:052 - info: [debug] Responding to client with success: {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
+2017-08-28 05:11:55:057 - info: <-- GET /wd/hub/status 200 5.617 ms - 105 {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
+2017-08-28 05:11:55:716 - info: --> POST /wd/hub/session {"desiredCapabilities":{"browserName":"Chrome","chromedriverExecutable":"C:\\Users\\AB49014\\git\\HAMPS_26Aug\\Resources\\chromedriver.exe","platformName":"Android","deviceName":"e754d6d3","version":"5.1.1"}}
+2017-08-28 05:11:55:716 - info: Client User-Agent string: Apache-HttpClient/4.5.2 (Java/1.8.0_92)
+2017-08-28 05:11:55:717 - info: [debug] The following desired capabilities were provided, but not recognized by appium. They will be passed on to any other services running on this server. : chromedriverExecutable, version
+2017-08-28 05:11:55:718 - info: Set mode: Proxying straight through to Chromedriver
+2017-08-28 05:11:55:718 - info: [debug] Looks like we want chrome on android
+2017-08-28 05:11:55:719 - info: [debug] Creating new appium session 6c506c9b-569a-4a48-a3ef-3eb53ba12eed
+2017-08-28 05:11:55:721 - info: [debug] Checking whether adb is present
+2017-08-28 05:11:55:733 - info: [debug] Using adb from C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe
+2017-08-28 05:11:55:734 - info: [debug] Using fast reset? true
+2017-08-28 05:11:55:734 - info: [debug] Preparing device for session
+2017-08-28 05:11:55:734 - info: [debug] Not checking whether app is present since we are assuming it's already on the device
+2017-08-28 05:11:55:734 - info: Retrieving device
+2017-08-28 05:11:55:734 - info: [debug] Trying to find a connected android device
+2017-08-28 05:11:55:735 - info: [debug] Getting connected devices...
+2017-08-28 05:11:55:736 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe devices
+2017-08-28 05:11:56:344 - info: [debug] 1 device(s) connected
+2017-08-28 05:11:56:344 - info: Found device 0123456789ABCDEF
+2017-08-28 05:11:56:344 - info: [debug] Setting device id to 0123456789ABCDEF
+2017-08-28 05:11:56:345 - info: [debug] Waiting for device to be ready and to respond to shell commands (timeout = 5)
+2017-08-28 05:11:56:345 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s 0123456789ABCDEF wait-for-device
+2017-08-28 05:11:56:569 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s 0123456789ABCDEF shell "echo 'ready'"
+2017-08-28 05:11:56:785 - info: [debug] Starting logcat capture
+2017-08-28 05:11:56:887 - info: [debug] Pushing unlock helper app to device...
+2017-08-28 05:11:56:899 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s 0123456789ABCDEF install "C:\Program Files (x86)\Appium\node_modules\appium\build\unlock_apk\unlock_apk-debug.apk"

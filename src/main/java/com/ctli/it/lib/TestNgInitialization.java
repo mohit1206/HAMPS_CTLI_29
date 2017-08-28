@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -73,10 +74,17 @@ public class TestNgInitialization implements AutomationConstants {
 			driver.get(ReadPropertyFile.getPropertyValue("URL"));
 
 		} else if (browser.equalsIgnoreCase("FF")) {
-			driver = new FirefoxDriver();
+			FirefoxProfile profile = new FirefoxProfile();
+			profile.setPreference("dom.popup_maximum", 0);
+			profile.setPreference("privacy.popups.showBrowserMessage", false);
+			driver = new FirefoxDriver(profile);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.get(ReadPropertyFile.getPropertyValue("URL"));
+			driver.get(ReadPropertyFile.getPropertyValue("URL")); 
+			/*driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get(ReadPropertyFile.getPropertyValue("URL"));*/
 		}
 
 		else if (browser.equalsIgnoreCase("appium")) {
