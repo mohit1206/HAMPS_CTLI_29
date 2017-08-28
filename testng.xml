@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
- <test name="FF Test">
+<!--  <test name="FF Test">
+ <parameter name="browser" value="FF"/>
+    <classes>
+      <class name="com.ctli.it.testcases.NaukriTestCase1"/>
+    </classes>
+  </test> -->  
+  <test name="Mobile Test">
 <parameter name="browser" value="appium"/>
     <classes>
-      <class name="com.ctli.it.mobiletestcase.BookMyShowTestCase"/>
-    </classes>
-  </test> 
- <test name="Mobile Test">
-<parameter name="browser" value="FF"/>
-    <classes>
-      <class name="com.ctli.it.testcases.LoginTestCase"/>
+      <class name="com.ctli.it.mobiletestcase.NaukriMobileTestCase"/>
     </classes>
   </test>
-    <test name="Rest Test">
+  <!--   <test name="Rest Test">
 <parameter name="browser" value="Rest"/>
     <classes>
       <class name="com.ctli.it.testcases.RestService"/>
     </classes>
-  </test>
+  </test> 
   
      <test name="soap Test">
 <parameter name="browser" value="soap"/>
     <classes>
       <class name="com.ctli.it.soap.CelsiusToFahrenheit"/>
     </classes>
-  </test>
+  </test> -->
 </suite> <!-- Suite -->
