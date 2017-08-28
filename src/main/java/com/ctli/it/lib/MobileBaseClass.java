@@ -2,10 +2,12 @@ package com.ctli.it.lib;
 
 import static org.testng.Assert.fail;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -27,6 +29,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByName;
@@ -40,6 +43,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.NoSuchWindowException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -47,6 +51,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -69,6 +74,8 @@ public class MobileBaseClass {
 	private byte[] encryptedvalue;
 	private String decryptedtext;
 	static final long TIME_OUT = 60;
+	public String parentName = null; 
+	public String childName = null; 
 
 	public MobileBaseClass(AndroidDriver androiddriver, ExtentTest testReport) {
 		this.androiddriver = androiddriver;
@@ -1258,5 +1265,59 @@ public void sentAnEmail()
 			public void waitForPageToLoad(){
 				androiddriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			}
+			
+			public void windowHandle(){
+				Set<String>  wids =  androiddriver.getWindowHandles();
+				Iterator<String>  itr  =  wids.iterator();
+				ArrayList<String> aList = new ArrayList<String>();
+				while(itr.hasNext()){
+					aList.add(itr.next());
+				}
+				System.out.println(aList.size());
+				parentName = aList.get(0); 
+				childName =aList.get(1); 
+			}
+			
+			public void switchToChildWindow(){
+				windowHandle();
+				androiddriver.switchTo().window(childName);
+			}
+			
+			public void switchToParentWindow(){
+				closeCurrentWindow();
+				androiddriver.switchTo().window(parentName);
+			} 
+			
+		       public ArrayList<String> getstringarraylist(By by){                  // Return String arraylist text of the Webelements
+		              List<WebElement> WebElements=androiddriver.findElements(by);
+		              
+		              ArrayList<String> Fieldtext=new ArrayList<String>();
+		              
+		              for(int j=0;j<WebElements.size();j++){
+		                     Fieldtext.add(j, WebElements.get(j).getText().trim());
+		                           //slf4jLogger.info("Fields Present:"+Devicecreate_attribute.get(j).getText());
+		                     }
+		              
+		              return Fieldtext;
+		       }
+		       
+		       public void getPageScreenShot()
+		     	{
+		   		String contextName = androiddriver.getContext();
+		   		androiddriver.context("NATIVE_APP");
+		   		String imagePath="./MobileScreenShots"+"/"+getFormatedDateTime()+".png";
+		   		EventFiringWebDriver edriver=new EventFiringWebDriver(androiddriver);
+		   		try{
+		   			File screenShot = androiddriver.getScreenshotAs(OutputType.FILE);
+		   			FileUtils.copyFile(screenShot, new File(imagePath));
+		   			}
+		   		catch(Exception e)
+		   		{
+		   			System.out.println("scrennshot couldn't capture");
+		   		}
+		   		
+		   	}      
+	
+				
 			
 }

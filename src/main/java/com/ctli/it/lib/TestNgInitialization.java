@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -46,10 +47,13 @@ public class TestNgInitialization implements AutomationConstants {
 		testReport = extent.startTest((this.getClass().getSimpleName() + "::"  +method.getName()),method.getName()); 
 		String browser = test.getParameter("browser");
 		if (browser.equalsIgnoreCase("GC")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--disable-extensions");
+			options.addArguments("disable-infobars");
 			String key = "webdriver.chrome.driver";
 			String value = "./Resources/chromedriver.exe";
 			System.setProperty(key, value);
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get(ReadPropertyFile.getPropertyValue("URL"));
@@ -113,16 +117,23 @@ public class TestNgInitialization implements AutomationConstants {
 	@AfterMethod
 	public void closeApp(Method method, XmlTest test, ITestResult result)
 	{
+		 String browser = test.getParameter("browser");
 		if(result.isSuccess()){
 			System.out.println("pass");  
 		}else{
-			BaseClass bClass = new BaseClass(driver, testReport);
-			bClass.getPageScreenShot();
-			System.out.println("Successfully captured a screenshot");
+			 if(browser.equalsIgnoreCase("ff")||browser.equalsIgnoreCase("gc")||browser.equalsIgnoreCase("ie")){
+				 BaseClass bClass = new BaseClass(driver, testReport);
+					bClass.getPageScreenShot();
+					System.out.println("Successfully captured a screenshot");
+			 }else if(browser.equalsIgnoreCase("appium")) {
+				 MobileBaseClass mbClass = new MobileBaseClass(mobiledriver, testReport);
+				 mbClass.getPageScreenShot();
+				 System.out.println("Successfully captured a screenshot");
+			 }
+			
 		}
-		 String browser = test.getParameter("browser");
 		  if(browser.equalsIgnoreCase("ff")||browser.equalsIgnoreCase("gc")||browser.equalsIgnoreCase("ie")){
-			  driver.close();
+			  driver.quit();
 		  }else if (browser.equalsIgnoreCase("appium")) {
 			mobiledriver.close();
 		}

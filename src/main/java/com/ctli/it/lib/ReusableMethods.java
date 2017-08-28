@@ -1,7 +1,13 @@
 package com.ctli.it.lib;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
+import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.text.PDFTextStripperByArea;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -84,4 +90,38 @@ public class ReusableMethods extends BaseClass{
 //			 monthDrpdwn.selectByIndex(month-1);
 			 date.click();
 		}
+		
+		//#########################   PDF Read Method  ############################################//
+		public String ReadPdf(String pdfpath) throws InvalidPasswordException, IOException {
+		String value=null;
+		try (PDDocument document = PDDocument.load(new File(pdfpath))) {
+		document.getClass();
+
+		           if (!document.isEncrypted()) {
+
+		               PDFTextStripperByArea stripper = new PDFTextStripperByArea();
+		               stripper.setSortByPosition(true);
+
+		               PDFTextStripper tStripper = new PDFTextStripper();
+
+		               String pdfFileInText = tStripper.getText(document);
+		               //System.out.println("Text:" + st);
+
+		// split by whitespace
+		               String lines[] = pdfFileInText.split("\\r?\\n");
+		               for (String line : lines) {
+		                   System.out.println(line);
+		                   value+=line;
+		               }
+		               
+		               
+
+		           }
+
+		       }
+		return value;
+		 
+		}
+
+		
 }

@@ -16,6 +16,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -82,6 +83,8 @@ public class BaseClass {
 	private CipherMe cipher;
 	private byte[] encryptedvalue;
 	private String decryptedtext;
+	public String parentName = null; 
+	public String childName = null; 
 	
 	public  BaseClass(WebDriver driver,ExtentTest testReport)
 	{
@@ -1228,5 +1231,43 @@ public class BaseClass {
 		public void waitForPageToLoad(){
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		}
+		
+	//...................window handling.....................................
+		public void windowHandle(){
+				Set<String>  wids =  driver.getWindowHandles();
+				Iterator<String>  itr  =  wids.iterator();
+				ArrayList<String> aList = new ArrayList<String>();
+				while(itr.hasNext()){
+					aList.add(itr.next());
+				}
+				System.out.println(aList.size());
+				parentName = aList.get(0); 
+				childName =aList.get(1); 
+			}
+			
+			public void switchToChildWindow(){
+				windowHandle();
+				driver.switchTo().window(childName);
+			}
+			
+			public void switchToParentWindow(){
+				closeCurrentWindow();
+				driver.switchTo().window(parentName);
+			}
+			
+		       public ArrayList<String> getstringarraylist(By by){                  // Return String arraylist text of the Webelements
+		              List<WebElement> WebElements=driver.findElements(by);
+		              
+		              ArrayList<String> Fieldtext=new ArrayList<String>();
+		              
+		              for(int j=0;j<WebElements.size();j++){
+		                     Fieldtext.add(j, WebElements.get(j).getText().trim());
+		                           //slf4jLogger.info("Fields Present:"+Devicecreate_attribute.get(j).getText());
+		                     }
+		              
+		              return Fieldtext;
+		       }
+		
+			
 		
 }
