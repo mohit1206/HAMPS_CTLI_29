@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
+//import org.apache.pdfbox.pdmodel.PDDocument;
+//import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
 import org.openqa.selenium.By;
@@ -20,6 +20,8 @@ public class ReusableMethods extends BaseClass{
 	
 	public ReusableMethods(WebDriver driver, ExtentTest testReport){
 		super(driver, testReport);
+		
+		
 	}
 
 	  public void clickdate(String inputDate){
@@ -90,7 +92,7 @@ public class ReusableMethods extends BaseClass{
 //			 monthDrpdwn.selectByIndex(month-1);
 			 date.click();
 		}
-		
+	/*	
 		//#########################   PDF Read Method  ############################################//
 		public String ReadPdf(String pdfpath) throws InvalidPasswordException, IOException {
 		String value=null;
@@ -122,6 +124,39 @@ public class ReusableMethods extends BaseClass{
 		return value;
 		 
 		}
-
-		
+*/
+public void Takescreenshot() {
+            
+            try {
+                  String batfilepath=System.getProperty("user.dir")+"\\Resources\\Autoitexe\\Takescreenshot.exe";                 
+                         //Runtime.getRuntime().exec(batfilepath,System.getProperty("user.dir")+"\\Resources\\Screenshots\\demo");
+                  System.out.println(batfilepath);  
+                  ProcessBuilder builder = new ProcessBuilder(batfilepath, System.getProperty("user.dir")+"\\ScreenShots\\"+getFormatedDateTime());
+                  builder.start();
+            } catch (IOException e) {
+                         // TODO Auto-generated catch block
+                         e.printStackTrace();
+                  }
+            
+     }
+     
+     public void Uploadfile(String windowtitle, String fieldname, String filelocn, String actionbtn) {
+            
+            try {
+                  String batfilepath=System.getProperty("user.dir")+"\\Resources\\Autoitexe\\Uploadfile.exe";                   
+                         //Runtime.getRuntime().exec(batfilepath,System.getProperty("user.dir")+"\\Resources\\Screenshots\\demo");
+                  System.out.println(batfilepath);  
+                  ProcessBuilder builder = new ProcessBuilder(batfilepath, windowtitle, fieldname, System.getProperty("user.dir")+"\\Resources\\"+filelocn, actionbtn);
+                  //ProcessBuilder builder = new ProcessBuilder(batfilepath, windowtitle, fieldname, filelocn, actionbtn);
+                  Thread.sleep(3000);
+                  builder.start();
+            } catch (IOException e) {
+                         // TODO Auto-generated catch block
+                         e.printStackTrace();
+                  } catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            
+     } 
 }

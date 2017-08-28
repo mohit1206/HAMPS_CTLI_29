@@ -1,4 +1,4 @@
-package com.ctli.it.webPage;
+package com.ctli.it.webpage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

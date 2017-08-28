@@ -1,4 +1,4 @@
-package com.ctli.it.restAssured;
+package com.ctli.it.restassured;
 
 import java.io.IOException;
 import java.nio.file.Files;

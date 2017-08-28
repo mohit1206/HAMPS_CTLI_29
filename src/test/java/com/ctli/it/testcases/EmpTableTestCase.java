@@ -3,7 +3,7 @@ package com.ctli.it.testcases;
 import org.testng.annotations.Test;
 
 import com.ctli.it.lib.TestNgInitialization;
-import com.ctli.it.webPage.EmpTeblePage;
+import com.ctli.it.webpage.EmpTeblePage;
 
 public class EmpTableTestCase extends TestNgInitialization{
 	

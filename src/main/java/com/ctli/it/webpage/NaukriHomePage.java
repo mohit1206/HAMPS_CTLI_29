@@ -1,4 +1,4 @@
-package com.ctli.it.webPage;
+package com.ctli.it.webpage;
 
 import java.util.List;
 
@@ -78,7 +78,7 @@ public class NaukriHomePage extends BaseClass{
 	}
 	
 	public void searchJobs() throws InterruptedException{
-		DataTable dTable = new DataTable("C:\\Users\\AB49014\\git\\HAMPS_26Aug\\Resources\\FeatureInput.xlsx");
+		DataTable dTable = new DataTable("./Resources/FeatureInput.xlsx");
 		String search = dTable.getCellData("TEST", "Search", 2);
 		String location = dTable.getCellData("TEST", "Location", 2);
 		String experience = dTable.getCellData("TEST", "Yrs of exp", 2);
@@ -95,7 +95,7 @@ public class NaukriHomePage extends BaseClass{
 	}
 	
 	public void filterCritaria(){
-		DataTable dTable = new DataTable("C:\\Users\\AB49014\\git\\HAMPS_26Aug\\Resources\\FeatureInput.xlsx");
+		DataTable dTable = new DataTable("./Resources/FeatureInput.xlsx");
 		String industry = dTable.getCellData("TEST", "Industry", 2);
 		String[] educations = dTable.getCellData("TEST", "Education", 2).split(",");
 		
@@ -160,7 +160,7 @@ public class NaukriHomePage extends BaseClass{
 		String jobViews = getText(lbl_jobView);
 		String jobApplicants = getText(lbl_jobApplicant);
 		String desiredCandidate = getText(lbl_desiredProfile);
-		DataTable dTable = new DataTable("C:\\Users\\AB49014\\git\\HAMPS_26Aug\\Resources\\FeatureInput.xlsx");
+		DataTable dTable = new DataTable("./Resources/FeatureInput.xlsx");
 		dTable.setCellData("TEST", "Job View", 2, jobViews);
 		dTable.setCellData("TEST", "Job Applicant", 2, jobApplicants);
 		dTable.setCellData("TEST", "Desired Candidate", 2, desiredCandidate);

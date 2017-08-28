@@ -1,4 +1,4 @@
-package com.ctli.it.restAssured;
+package com.ctli.it.restassured;
 
 public class PayLoad {
 	

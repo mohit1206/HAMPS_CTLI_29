@@ -16,7 +16,7 @@ import com.eviware.soapui.impl.wsdl.WsdlSubmit;
 import com.eviware.soapui.impl.wsdl.WsdlSubmitContext;
 import com.eviware.soapui.support.SoapUIException;
 import com.eviware.soapui.support.XmlHolder;
-public class Soap_Refrence {
+public class Soap_Reference {
 @Test
 public void test() throws Exception
 {

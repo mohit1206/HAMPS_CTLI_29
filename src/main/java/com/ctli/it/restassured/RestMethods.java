@@ -1,4 +1,4 @@
-package com.ctli.it.restAssured;
+package com.ctli.it.restassured;
 
 import static com.jayway.restassured.RestAssured.given;
 
@@ -13,7 +13,7 @@ import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.path.xml.XmlPath;
 import com.jayway.restassured.response.Response;
 
-public class Rest_Methods {
+public class RestMethods {
 	
 //Methods for get
 	public void verifyGetResponse(){
@@ -60,7 +60,7 @@ public class Rest_Methods {
 	//post Methods
 //	@Test
 	public void post(){
-		PostsBygetSet post = new PostsBygetSet();
+		PostsByGetSet post = new PostsByGetSet();
 		post.setId("1");
 		post.setAuthor("Mohit");
 		post.setTitle("Test");

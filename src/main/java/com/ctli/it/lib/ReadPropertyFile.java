@@ -16,7 +16,9 @@ public static String getPropertyValue(String key)
 		value= ppt.getProperty(key);
 		}
 		catch(Exception e)
-		{}
+		{
+			e.printStackTrace();
+		}
 		return value;
 	}
 

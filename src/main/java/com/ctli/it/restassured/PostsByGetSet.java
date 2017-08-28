@@ -1,6 +1,6 @@
-package com.ctli.it.restAssured;
+package com.ctli.it.restassured;
 
-public class PostsBygetSet {
+public class PostsByGetSet {
 
 	
 	private String id;
