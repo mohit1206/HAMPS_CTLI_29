@@ -1,18 +1,19 @@
 package com.ctli.it.lib;
 
-import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
-//import org.apache.pdfbox.pdmodel.PDDocument;
-//import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
-import org.apache.pdfbox.text.PDFTextStripper;
-import org.apache.pdfbox.text.PDFTextStripperByArea;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.relevantcodes.extentreports.ExtentTest;
+
+import au.com.bytecode.opencsv.CSVReader;
+import au.com.bytecode.opencsv.CSVWriter;
 
 
 
@@ -159,4 +160,48 @@ public void Takescreenshot() {
 			}
             
      } 
+     
+    // READ DATA FROM CSV FILE 
+     
+     public String[] readFromCSV() throws IOException{
+         String[] str = null;
+         // This will load csv file 
+          CSVReader reader = new CSVReader(new FileReader("./Resources/Feature.csv"));
+         
+          // this will load content into list
+           List<String[]> li=reader.readAll();
+           System.out.println("Total rows which we have is "+li.size());
+                     
+          // create Iterator reference
+           Iterator<String[]>i1= li.iterator();
+             
+          // Iterate all values 
+          while(i1.hasNext()){
+              
+                str=i1.next();
+            
+          for(int i=0;i<str.length;i++)
+         {
+         
+            System.out.print(" "+str[i]);
+         
+         }
+            System.out.println("   ");
+              
+             
+         }
+         return str;
+  }
+  
+   public void writeIntoCSV(String[] data) throws IOException{
+         String csv = "./Resources/Feature.csv";
+         CSVWriter writer = new CSVWriter(new FileWriter(csv));
+
+//       String [] country = "India#China#United States".split("#");
+
+         writer.writeNext(data);
+
+         writer.close();     
+   }
+
 }

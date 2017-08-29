@@ -4,26 +4,18 @@
  <test name="FF Test">
  <parameter name="browser" value="FF"/>
     <classes>
-       <!-- <class name="com.ctli.it.testcases.NaukriTestCase1"/>  --> 
-      <class name="com.ctli.it.testcases.NaukriTestCase2"/>  
+        <class name="com.ctli.it.testcases.NaukriTestCase1"/> 
     </classes>
   </test>  
   
-  <!--  <test name="IE Test">
- <parameter name="browser" value="FF"/>
-    <classes>
-      
-       <class name="com.ctli.it.testcases.NaukriTestCase2"/> -
-    </classes>
-   </test>  -->
- <!--  <test name="Mobile Test">
+  
+ <test name="Mobile Test">
 <parameter name="browser" value="appium"/>
     <classes>
       <class name="com.ctli.it.mobiletestcase.NaukriMobileTestCase"/>
     </classes>
   </test>
-  
-   -->
+ 
  <!--   <test name="Rest Test">
 <parameter name="browser" value="Rest"/>
     <classes>
