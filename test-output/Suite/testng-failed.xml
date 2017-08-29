@@ -9,7 +9,6 @@
         <methods>
           <include name="initialSetUp"/>
           <include name="launchApp"/>
-          <include name="afterSuite"/>
           <include name="closeApp"/>
           <include name="test"/>
         </methods>

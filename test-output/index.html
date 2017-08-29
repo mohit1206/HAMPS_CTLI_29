@@ -48,12 +48,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\AB49014\git\HAMPS_26Aug\testng.xml</span>
+                    <span>C:\Users\ab14917\git\HAMPS_26Aug\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,7 +101,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.ctli.it.testcases.NaukriTestCase1" hash-for-method="test">test</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.ctli.it.mobiletestcase.NaukriMobileTestCase" hash-for-method="test">test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -119,7 +119,7 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.ctli.it.testcases.NaukriTestCase1</span>
+              <span class="class-name">com.ctli.it.mobiletestcase.NaukriMobileTestCase</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -134,7 +134,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\AB49014\git\HAMPS_26Aug\testng.xml</span>
+            <span class="header-content">C:\Users\ab14917\git\HAMPS_26Aug\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -143,10 +143,16 @@
 &lt;suite name=&quot;Suite&quot;&gt;
   &lt;test name=&quot;FF Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;FF&quot;/&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.ctli.it.testcases.NaukriTestCase1&quot;/&gt;
-    &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- FF Test --&gt;
+  &lt;test name=&quot;IE Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;FF&quot;/&gt;
+  &lt;/test&gt; &lt;!-- IE Test --&gt;
+  &lt;test name=&quot;Mobile Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;appium&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.ctli.it.mobiletestcase.NaukriMobileTestCase&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Mobile Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,7 +164,13 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">FF Test (1 class)</span>
+                <span class="test-name">FF Test (0 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">IE Test (0 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">Mobile Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,13 +199,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test')
-data.setCell(0, 2, 'com.ctli.it.testcases.NaukriTestCase1')
-data.setCell(0, 3, 100990);
+data.setCell(0, 2, 'com.ctli.it.mobiletestcase.NaukriMobileTestCase')
+data.setCell(0, 3, 131283);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -219,26 +231,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.ctli.it.testcases.NaukriTestCase1</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.ctli.it.mobiletestcase.NaukriMobileTestCase</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">initialSetUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
-                <span class="method-name">launchApp(public void com.ctli.it.testcases.NaukriTestCase1.test() throws java.lang.InterruptedException, [Tes...)</span>
-                <span class="method-start">464 ms</span>
+                <span class="method-name">launchApp(public void com.ctli.it.mobiletestcase.NaukriMobileTestCase.test() throws java.lang.InterruptedExcep...)</span>
+                <span class="method-start">641 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test</span>
-                <span class="method-start">27552 ms</span>
+                <span class="method-start">161924 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">closeApp(public void com.ctli.it.testcases.NaukriTestCase1.test() throws java.lang.InterruptedException, [Tes...)</span>
-                <span class="method-start">128543 ms</span>
+                <span class="method-name">closeApp(public void com.ctli.it.mobiletestcase.NaukriMobileTestCase.test() throws java.lang.InterruptedExcep...)</span>
+                <span class="method-start">293209 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <span class="method-name">afterSuite([Test: "FF Test" verbose:1[parameters:browser=>FF][metagroups:] [included: ][excluded: ]  classes:[X...)</span>
-                <span class="method-start">133086 ms</span>
+                <span class="method-name">afterSuite([Test: "Mobile Test" verbose:1[parameters:browser=>appium][metagroups:] [included: ][excluded: ]  cl...)</span>
+                <span class="method-start">297123 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -2,68 +2,72 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="132604" started-at="2017-08-28T10:58:05Z" finished-at="2017-08-28T11:00:17Z">
+  <suite name="Suite" duration-ms="296561" started-at="2017-08-28T15:01:12Z" finished-at="2017-08-28T15:06:08Z">
     <groups>
     </groups>
-    <test name="FF Test" duration-ms="132604" started-at="2017-08-28T10:58:05Z" finished-at="2017-08-28T11:00:17Z">
-      <class name="com.ctli.it.testcases.NaukriTestCase1">
-        <test-method status="PASS" signature="initialSetUp()[pri:0, instance:com.ctli.it.testcases.NaukriTestCase1@7a1ebcd8]" name="initialSetUp" is-config="true" duration-ms="450" started-at="2017-08-28T16:28:04Z" finished-at="2017-08-28T16:28:05Z">
+    <test name="FF Test" duration-ms="8" started-at="2017-08-28T15:01:12Z" finished-at="2017-08-28T15:01:12Z">
+    </test> <!-- FF Test -->
+    <test name="IE Test" duration-ms="2" started-at="2017-08-28T15:01:12Z" finished-at="2017-08-28T15:01:12Z">
+    </test> <!-- IE Test -->
+    <test name="Mobile Test" duration-ms="296444" started-at="2017-08-28T15:01:12Z" finished-at="2017-08-28T15:06:08Z">
+      <class name="com.ctli.it.mobiletestcase.NaukriMobileTestCase">
+        <test-method status="PASS" signature="initialSetUp()[pri:0, instance:com.ctli.it.mobiletestcase.NaukriMobileTestCase@c46bcd4]" name="initialSetUp" is-config="true" duration-ms="519" started-at="2017-08-28T20:31:11Z" finished-at="2017-08-28T20:31:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialSetUp -->
-        <test-method status="PASS" signature="launchApp(java.lang.reflect.Method, org.testng.xml.XmlTest)[pri:0, instance:com.ctli.it.testcases.NaukriTestCase1@7a1ebcd8]" name="launchApp" is-config="true" duration-ms="27088" started-at="2017-08-28T16:28:05Z" finished-at="2017-08-28T16:28:32Z">
+        <test-method status="PASS" signature="launchApp(java.lang.reflect.Method, org.testng.xml.XmlTest)[pri:0, instance:com.ctli.it.mobiletestcase.NaukriMobileTestCase@c46bcd4]" name="launchApp" is-config="true" duration-ms="161283" started-at="2017-08-28T20:31:12Z" finished-at="2017-08-28T20:33:53Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.ctli.it.testcases.NaukriTestCase1.test() throws java.lang.InterruptedException]]>
+                <![CDATA[public void com.ctli.it.mobiletestcase.NaukriMobileTestCase.test() throws java.lang.InterruptedException]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Test: "FF Test" verbose:1[parameters:browser=>FF][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.testcases.NaukriTestCase1]  packages:] ]]>
+                <![CDATA[[Test: "Mobile Test" verbose:1[parameters:browser=>appium][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.mobiletestcase.NaukriMobileTestCase]  packages:] ]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method status="PASS" signature="test()[pri:0, instance:com.ctli.it.testcases.NaukriTestCase1@7a1ebcd8]" name="test" duration-ms="100990" started-at="2017-08-28T16:28:32Z" finished-at="2017-08-28T16:30:13Z">
+        <test-method status="PASS" signature="test()[pri:0, instance:com.ctli.it.mobiletestcase.NaukriMobileTestCase@c46bcd4]" name="test" duration-ms="131283" started-at="2017-08-28T20:33:53Z" finished-at="2017-08-28T20:36:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method status="PASS" signature="closeApp(java.lang.reflect.Method, org.testng.xml.XmlTest, org.testng.ITestResult)[pri:0, instance:com.ctli.it.testcases.NaukriTestCase1@7a1ebcd8]" name="closeApp" is-config="true" duration-ms="4510" started-at="2017-08-28T16:30:13Z" finished-at="2017-08-28T16:30:17Z">
+        <test-method status="PASS" signature="closeApp(java.lang.reflect.Method, org.testng.xml.XmlTest, org.testng.ITestResult)[pri:0, instance:com.ctli.it.mobiletestcase.NaukriMobileTestCase@c46bcd4]" name="closeApp" is-config="true" duration-ms="3869" started-at="2017-08-28T20:36:04Z" finished-at="2017-08-28T20:36:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.ctli.it.testcases.NaukriTestCase1.test() throws java.lang.InterruptedException]]>
+                <![CDATA[public void com.ctli.it.mobiletestcase.NaukriMobileTestCase.test() throws java.lang.InterruptedException]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Test: "FF Test" verbose:1[parameters:browser=>FF][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.testcases.NaukriTestCase1]  packages:] ]]>
+                <![CDATA[[Test: "Mobile Test" verbose:1[parameters:browser=>appium][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.mobiletestcase.NaukriMobileTestCase]  packages:] ]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[[TestResult name=test status=SUCCESS method=NaukriTestCase1.test()[pri:0, instance:com.ctli.it.testcases.NaukriTestCase1@7a1ebcd8] output={null}]]]>
+                <![CDATA[[TestResult name=test status=SUCCESS method=NaukriMobileTestCase.test()[pri:0, instance:com.ctli.it.mobiletestcase.NaukriMobileTestCase@c46bcd4] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method status="PASS" signature="afterSuite(org.testng.xml.XmlTest)[pri:0, instance:com.ctli.it.testcases.NaukriTestCase1@7a1ebcd8]" name="afterSuite" is-config="true" duration-ms="323" started-at="2017-08-28T16:30:17Z" finished-at="2017-08-28T16:30:18Z">
+        <test-method status="PASS" signature="afterSuite(org.testng.xml.XmlTest)[pri:0, instance:com.ctli.it.mobiletestcase.NaukriMobileTestCase@c46bcd4]" name="afterSuite" is-config="true" duration-ms="415" started-at="2017-08-28T20:36:08Z" finished-at="2017-08-28T20:36:09Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Test: "FF Test" verbose:1[parameters:browser=>FF][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.testcases.NaukriTestCase1]  packages:] ]]>
+                <![CDATA[[Test: "Mobile Test" verbose:1[parameters:browser=>appium][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=com.ctli.it.mobiletestcase.NaukriMobileTestCase]  packages:] ]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.ctli.it.testcases.NaukriTestCase1 -->
-    </test> <!-- FF Test -->
+      </class> <!-- com.ctli.it.mobiletestcase.NaukriMobileTestCase -->
+    </test> <!-- Mobile Test -->
   </suite> <!-- Suite -->
 </testng-results>

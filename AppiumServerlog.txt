@@ -1,32 +1,108 @@
-2017-08-28 05:11:54:689 - info: Welcome to Appium v1.4.16 (REV ae6877eff263066b26328d457bd285c0cc62430d)
-2017-08-28 05:11:54:690 - info: Appium REST http interface listener started on 0.0.0.0:4723
-2017-08-28 05:11:54:693 - info: [debug] Non-default server args: {"log":"C:\\Users\\AB49014\\git\\HAMPS_26Aug\\.\\AppiumServerlog.txt"}
-2017-08-28 05:11:54:693 - info: Console LogLevel: debug
-2017-08-28 05:11:54:693 - info: File LogLevel: debug
-2017-08-28 05:11:55:051 - info: --> GET /wd/hub/status {}
-2017-08-28 05:11:55:052 - info: [debug] Responding to client with success: {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
-2017-08-28 05:11:55:057 - info: <-- GET /wd/hub/status 200 5.617 ms - 105 {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
-2017-08-28 05:11:55:716 - info: --> POST /wd/hub/session {"desiredCapabilities":{"browserName":"Chrome","chromedriverExecutable":"C:\\Users\\AB49014\\git\\HAMPS_26Aug\\Resources\\chromedriver.exe","platformName":"Android","deviceName":"e754d6d3","version":"5.1.1"}}
-2017-08-28 05:11:55:716 - info: Client User-Agent string: Apache-HttpClient/4.5.2 (Java/1.8.0_92)
-2017-08-28 05:11:55:717 - info: [debug] The following desired capabilities were provided, but not recognized by appium. They will be passed on to any other services running on this server. : chromedriverExecutable, version
-2017-08-28 05:11:55:718 - info: Set mode: Proxying straight through to Chromedriver
-2017-08-28 05:11:55:718 - info: [debug] Looks like we want chrome on android
-2017-08-28 05:11:55:719 - info: [debug] Creating new appium session 6c506c9b-569a-4a48-a3ef-3eb53ba12eed
-2017-08-28 05:11:55:721 - info: [debug] Checking whether adb is present
-2017-08-28 05:11:55:733 - info: [debug] Using adb from C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe
-2017-08-28 05:11:55:734 - info: [debug] Using fast reset? true
-2017-08-28 05:11:55:734 - info: [debug] Preparing device for session
-2017-08-28 05:11:55:734 - info: [debug] Not checking whether app is present since we are assuming it's already on the device
-2017-08-28 05:11:55:734 - info: Retrieving device
-2017-08-28 05:11:55:734 - info: [debug] Trying to find a connected android device
-2017-08-28 05:11:55:735 - info: [debug] Getting connected devices...
-2017-08-28 05:11:55:736 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe devices
-2017-08-28 05:11:56:344 - info: [debug] 1 device(s) connected
-2017-08-28 05:11:56:344 - info: Found device 0123456789ABCDEF
-2017-08-28 05:11:56:344 - info: [debug] Setting device id to 0123456789ABCDEF
-2017-08-28 05:11:56:345 - info: [debug] Waiting for device to be ready and to respond to shell commands (timeout = 5)
-2017-08-28 05:11:56:345 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s 0123456789ABCDEF wait-for-device
-2017-08-28 05:11:56:569 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s 0123456789ABCDEF shell "echo 'ready'"
-2017-08-28 05:11:56:785 - info: [debug] Starting logcat capture
-2017-08-28 05:11:56:887 - info: [debug] Pushing unlock helper app to device...
-2017-08-28 05:11:56:899 - info: [debug] executing cmd: C:\Users\AB49014\AppData\Local\Android\sdk\platform-tools\adb.exe -s 0123456789ABCDEF install "C:\Program Files (x86)\Appium\node_modules\appium\build\unlock_apk\unlock_apk-debug.apk"
+2017-08-28 15:48:29:876 - info: Welcome to Appium v1.4.16 (REV ae6877eff263066b26328d457bd285c0cc62430d)
+2017-08-28 15:48:29:878 - info: Appium REST http interface listener started on 0.0.0.0:4723
+2017-08-28 15:48:29:890 - info: [debug] Non-default server args: {"log":"C:\\Users\\ab14917\\git\\HAMPS_26Aug\\.\\AppiumServerlog.txt"}
+2017-08-28 15:48:29:891 - info: Console LogLevel: debug
+2017-08-28 15:48:29:891 - info: File LogLevel: debug
+2017-08-28 15:48:30:498 - info: --> GET /wd/hub/status {}
+2017-08-28 15:48:30:501 - info: [debug] Responding to client with success: {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
+2017-08-28 15:48:30:516 - info: <-- GET /wd/hub/status 200 18.620 ms - 105 {"status":0,"value":{"build":{"version":"1.4.16","revision":"ae6877eff263066b26328d457bd285c0cc62430d"}}}
+2017-08-28 15:48:30:631 - info: --> POST /wd/hub/session {"desiredCapabilities":{"browserName":"Chrome","chromedriverExecutable":"C:\\Users\\ab14917\\git\\HAMPS_26Aug\\Resources\\chromedriver.exe","platformName":"Android","deviceName":"e754d6d3","version":"6.0.1"}}
+2017-08-28 15:48:30:632 - info: Client User-Agent string: Apache-HttpClient/4.5.2 (Java/1.8.0_05)
+2017-08-28 15:48:30:634 - info: [debug] The following desired capabilities were provided, but not recognized by appium. They will be passed on to any other services running on this server. : chromedriverExecutable, version
+2017-08-28 15:48:30:636 - info: Set mode: Proxying straight through to Chromedriver
+2017-08-28 15:48:30:636 - info: [debug] Looks like we want chrome on android
+2017-08-28 15:48:30:638 - info: [debug] Creating new appium session 6a85f7e8-4e13-4f7e-b330-0b8c4b4cb79b
+2017-08-28 15:48:30:640 - info: [debug] Checking whether adb is present
+2017-08-28 15:48:30:654 - info: [debug] Using adb from C:\Android\AndroidSdk\platform-tools\adb.exe
+2017-08-28 15:48:30:655 - info: [debug] Using fast reset? true
+2017-08-28 15:48:30:655 - info: [debug] Preparing device for session
+2017-08-28 15:48:30:656 - info: [debug] Not checking whether app is present since we are assuming it's already on the device
+2017-08-28 15:48:30:656 - info: Retrieving device
+2017-08-28 15:48:30:656 - info: [debug] Trying to find a connected android device
+2017-08-28 15:48:30:657 - info: [debug] Getting connected devices...
+2017-08-28 15:48:30:658 - info: [debug] executing cmd: C:\Android\AndroidSdk\platform-tools\adb.exe devices
+2017-08-28 15:48:31:675 - info: [debug] 0 device(s) connected
+2017-08-28 15:48:31:675 - info: [debug] Could not find devices, restarting adb server...
+2017-08-28 15:48:32:676 - info: [debug] executing cmd: C:\Android\AndroidSdk\platform-tools\adb.exe kill-server
+2017-08-28 15:48:33:770 - info: [debug] Getting connected devices...
+2017-08-28 15:48:33:771 - info: [debug] executing cmd: C:\Android\AndroidSdk\platform-tools\adb.exe devices
+2017-08-28 15:48:38:806 - info: [debug] 0 device(s) connected
+2017-08-28 15:48:38:806 - info: [debug] Could not find devices, restarting adb server...
+2017-08-28 15:48:39:811 - info: [debug] executing cmd: C:\Android\AndroidSdk\platform-tools\adb.exe kill-server
+2017-08-28 15:48:40:411 - info: [debug] Getting connected devices...
+2017-08-28 15:48:40:412 - info: [debug] executing cmd: C:\Android\AndroidSdk\platform-tools\adb.exe devices
+2017-08-28 15:48:45:456 - info: [debug] 0 device(s) connected
+2017-08-28 15:48:45:456 - info: [debug] Could not find devices, restarting adb server...
+2017-08-28 15:48:46:456 - info: [debug] executing cmd: C:\Android\AndroidSdk\platform-tools\adb.exe kill-server
+2017-08-28 15:48:47:106 - info: [debug] Getting connected devices...
+2017-08-28 15:48:47:106 - info: [debug] executing cmd: C:\Android\AndroidSdk\platform-tools\adb.exe devices
+2017-08-28 15:48:52:427 - info: [debug] 0 device(s) connected
+2017-08-28 15:48:52:428 - info: [debug] Cleaning up appium session
+2017-08-28 15:48:52:429 - error: Failed to start an Appium session, err was: Error: Could not find a connected Android device.
+2017-08-28 15:48:52:449 - info: [debug] Error: Could not find a connected Android device.
+    at [object Object].ADB.getDevicesWithRetry (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\appium-adb\lib\adb.js:606:15)
+    at [object Object].androidCommon.prepareActiveDevice (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:400:12)
+    at [object Object].<anonymous> (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:326:26)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:607:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:246:17
+    at iterate (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:146:13)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:157:25
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:248:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:612:34
+    at [object Object].androidCommon.ensureDeviceLocale (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:371:45)
+    at [object Object].androidCommon.prepareEmulator (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:364:10)
+    at [object Object].<anonymous> (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:325:26)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:607:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:246:17
+    at iterate (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:146:13)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:157:25
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:248:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:612:34
+    at [object Object].androidCommon.checkAppPresent (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:336:5)
+    at [object Object].<anonymous> (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:324:26)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:607:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:246:17
+    at iterate (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:146:13)
+    at async.eachSeries (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:162:9)
+    at _asyncMap (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:245:13)
+    at Object.mapSeries (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:228:23)
+    at Object.async.series (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:605:19)
+    at [object Object].androidCommon.prepareDevice (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:323:9)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:607:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:246:17
+    at iterate (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:146:13)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:157:25
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:248:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:612:34
+    at [object Object].Android.initUiautomator (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android.js:140:10)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:607:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:246:17
+    at iterate (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:146:13)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:157:25
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:248:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:612:34
+    at [object Object].ChromeAndroid.prepareUiAutomator (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\chrome.js:119:3)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:607:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:246:17
+    at iterate (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:146:13)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:157:25
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:248:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:612:34
+    at [object Object].<anonymous> (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:1086:7)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\appium-adb\lib\adb.js:74:5
+    at [object Object].<anonymous> (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\appium-adb\lib\adb.js:137:5)
+    at [object Object].ADB.checkSdkBinaryPresent (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\appium-adb\lib\adb.js:116:5)
+    at [object Object].ADB.checkAdbPresent (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\appium-adb\lib\adb.js:134:8)
+    at Function.ADB.createADB (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\appium-adb\lib\adb.js:73:7)
+    at [object Object].androidCommon.initAdb (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\android-common.js:1083:9)
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:607:21
+    at C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:246:17
+    at iterate (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:146:13)
+    at async.eachSeries (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:162:9)
+    at _asyncMap (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:245:13)
+    at Object.mapSeries (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:228:23)
+    at Object.async.series (C:\Program Files (x86)\Appium\node_modules\appium\node_modules\async\lib\async.js:605:19)
+    at [object Object].ChromeAndroid.start (C:\Program Files (x86)\Appium\node_modules\appium\lib\devices\android\chrome.js:86:9)
+    at [object Object].Appium.invoke (C:\Program Files (x86)\Appium\node_modules\appium\lib\appium.js:285:17)
+2017-08-28 15:48:52:450 - info: [debug] Responding to client with error: {"status":33,"value":{"message":"A new session could not be created. (Original error: Could not find a connected Android device.)","origValue":"Could not find a connected Android device."},"sessionId":null}
+2017-08-28 15:48:52:459 - info: <-- POST /wd/hub/session 500 21826.894 ms - 206 
